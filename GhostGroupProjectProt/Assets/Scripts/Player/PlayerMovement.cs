@@ -7,15 +7,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] CharacterController _characterController;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        Move(CalculateMovement() * 5, Time.deltaTime);
+        Move(CalculateMovement() * 10, Time.deltaTime);
 
         FaceMovementDirection(CalculateMovement(), Time.deltaTime);
     }
