@@ -324,6 +324,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3573534694940266414}
+  - component: {fileID: 5769635434782055374}
+  - component: {fileID: 7622306138690484612}
   m_Layer: 0
   m_Name: CenterPieceMapPiece
   m_TagString: Untagged
@@ -347,6 +349,39 @@ Transform:
   - {fileID: 8228608372531551712}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5769635434782055374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117444714155229474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec91a8b48d9c354598c0f8c2ae03d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7622306138690484612
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4117444714155229474}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.59, y: 1, z: 8.76}
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1 &4353422723911688877
 GameObject:
   m_ObjectHideFlags: 0
