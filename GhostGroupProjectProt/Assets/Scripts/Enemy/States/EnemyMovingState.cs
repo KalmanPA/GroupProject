@@ -21,7 +21,7 @@ public class EnemyMovingState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
-        Debug.Log("InMoving");
+        //Debug.Log("InMoving");
 
         MoveToDestenation(_destination);
 
@@ -34,7 +34,7 @@ public class EnemyMovingState : EnemyBaseState
     }
     public override void Exit()
     {
-        Debug.Log("ExitMovingState");
+        //Debug.Log("ExitMovingState");
     }
 
     private void CheckForReachingDestination()
