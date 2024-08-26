@@ -17,7 +17,9 @@ public class EnemyScaredState : EnemyBaseState
         _stateMachine.Agent.isStopped = false;
         _stateMachine.Agent.speed = 6f;
 
-        Debug.Log("Scared");
+        _stateMachine.Image.sprite = _stateMachine.Textures[1];
+
+        //Debug.Log("Scared");
     }
     public override void Tick(float deltaTime)
     {

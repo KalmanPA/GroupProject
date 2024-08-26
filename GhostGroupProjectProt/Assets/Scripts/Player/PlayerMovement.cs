@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move(CalculateMovement() * 10, Time.deltaTime);
 
-        FaceMovementDirection(CalculateMovement(), Time.deltaTime);
+        //FaceMovementDirection(CalculateMovement(), Time.deltaTime);
     }
     private void Move(Vector3 motion, float deltaTime)
     {

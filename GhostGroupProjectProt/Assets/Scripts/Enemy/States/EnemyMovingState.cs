@@ -17,7 +17,7 @@ public class EnemyMovingState : EnemyBaseState
 
         _stateMachine.Agent.speed = 4f;
 
-        
+        _stateMachine.Image.sprite = _stateMachine.Textures[0];
     }
     public override void Tick(float deltaTime)
     {

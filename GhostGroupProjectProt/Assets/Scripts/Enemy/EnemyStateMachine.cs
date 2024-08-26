@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+//using UnityEngine.UI;
+//using UnityEngine.UIElements;
 
 public class EnemyStateMachine : StateMachine
 {
@@ -9,12 +12,18 @@ public class EnemyStateMachine : StateMachine
 
     [SerializeField] int _mentalHealth = 3;
 
+    public Image Image;
+
+    public Sprite[] Textures;
+
     public NavMeshAgent Agent;
 
     private int _workPosIndex = 0;
 
     private void Start()
     {
+        Agent.updateRotation = false;
+
         SwitchState(new EnemyMovingState(this, _workPositions[_workPosIndex]));
     }
 
