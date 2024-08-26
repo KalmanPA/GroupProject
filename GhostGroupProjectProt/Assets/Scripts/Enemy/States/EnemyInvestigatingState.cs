@@ -18,7 +18,7 @@ public class EnemyInvestigatingState : EnemyBaseState
 
         _stateMachine.Image.sprite = _stateMachine.Textures[4];
 
-        _stateMachine.Agent.speed = 6f;
+        //_stateMachine.Agent.speed = 6f;
     }
     public override void Tick(float deltaTime)
     {
@@ -29,7 +29,7 @@ public class EnemyInvestigatingState : EnemyBaseState
             _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetNextWorkPosition()));
         }
 
-        MoveToDestenation(_investigationPosition);
+        MoveToDestenation(_investigationPosition,6);
     }
 
     public override void Exit()

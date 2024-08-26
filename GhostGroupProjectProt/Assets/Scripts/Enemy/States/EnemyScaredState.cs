@@ -38,7 +38,7 @@ public class EnemyScaredState : EnemyBaseState
             _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetNextWorkPosition()));
         }
 
-        MoveToDestenation(_randomPos);
+        MoveToDestenation(_randomPos, 6f);
 
         //if (_duration > 3f)
         //{

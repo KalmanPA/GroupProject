@@ -65,7 +65,7 @@ public class Room : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IP
 
         //if (!_isPlayerInRoom) return;
 
-        if (Vector3.Distance(transform.position, _player.transform.position) < 10)
+        if (Vector3.Distance(transform.position, _player.transform.position) < 15)
         {
             SummonFog();
         }

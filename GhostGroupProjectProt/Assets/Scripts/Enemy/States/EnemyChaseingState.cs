@@ -19,7 +19,7 @@ public class EnemyChaseingState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
-        MoveToDestenation(_player.transform.position);
+        MoveToDestenation(_player.transform.position, 10f);
 
         if (!_player.GetComponent<PlayerStatus>().IsVulnarable)
         {

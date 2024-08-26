@@ -25,7 +25,7 @@ public class EnemyMovingState : EnemyBaseState
     {
         //Debug.Log("InMoving");
 
-        MoveToDestenation(_destination);
+        MoveToDestenation(_destination, 4f);
 
         CheckForReachingDestination();
 
@@ -41,7 +41,7 @@ public class EnemyMovingState : EnemyBaseState
 
     private void CheckForReachingDestination()
     {
-        if (Vector3.Distance(_stateMachine.transform.position, _destination) < 2.5f)
+        if (Vector3.Distance(_stateMachine.transform.position, _destination) < 3f)
         {
             _stateMachine.SwitchState(new EnemyWorkingState(_stateMachine));
         }

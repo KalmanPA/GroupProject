@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class EnemyStateMachine : StateMachine
 {
+    public CharacterController CharacterController;
+
     [SerializeField] Transform[] _workPositions;
 
     [SerializeField] int _mentalHealth = 3;
@@ -21,6 +23,8 @@ public class EnemyStateMachine : StateMachine
     private int _workPosIndex = 0;
 
     public EnemyStates CurrentState;
+
+    
 
     private void Start()
     {
