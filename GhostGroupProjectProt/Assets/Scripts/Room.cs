@@ -14,7 +14,14 @@ public class Room : MonoBehaviour, IPointerDownHandler
 
     float _fogDuration = 3f;
 
-    bool _isPlayerInRoom;
+    //bool _isPlayerInRoom;
+
+    GameObject _player;
+
+    private void Start()
+    {
+        _player = GameObject.FindWithTag("Player");
+    }
 
     private void Update()
     {
@@ -36,9 +43,14 @@ public class Room : MonoBehaviour, IPointerDownHandler
     {
         //Debug.Log("ClickWorks");
 
-        if (!_isPlayerInRoom) return;
+        //if (!_isPlayerInRoom) return;
 
-        SummonFog();
+        if (Vector3.Distance(transform.position, _player.transform.position) < 10)
+        {
+            SummonFog();
+        }
+
+        
     }
 
     private void SummonFog()
@@ -73,10 +85,10 @@ public class Room : MonoBehaviour, IPointerDownHandler
             
         }
 
-        if (other.gameObject.CompareTag("Player"))
-        {
-            _isPlayerInRoom = true;
-        }
+        //if (other.gameObject.CompareTag("Player"))
+        //{
+        //    _isPlayerInRoom = true;
+        //}
     }
 
     private void OnTriggerExit(Collider other)
@@ -88,9 +100,9 @@ public class Room : MonoBehaviour, IPointerDownHandler
             _enemies.Remove(other.gameObject.GetComponent<EnemyStateMachine>());
         }
 
-        if (other.gameObject.CompareTag("Player"))
-        {
-            _isPlayerInRoom = false;
-        }
+        //if (other.gameObject.CompareTag("Player"))
+        //{
+        //    _isPlayerInRoom = false;
+        //}
     }
 }
