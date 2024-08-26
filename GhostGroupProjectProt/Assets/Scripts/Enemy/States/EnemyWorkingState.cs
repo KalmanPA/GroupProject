@@ -11,7 +11,9 @@ public class EnemyWorkingState : EnemyBaseState
 
     public override void Enter()
     {
-        _stateMachine.Image.sprite = _stateMachine.Textures[2];
+        _stateMachine.Agent.isStopped = true;
+
+        _stateMachine.Image.sprite = _stateMachine.Textures[1];
 
         _stateMachine.CurrentState = EnemyStates.Working;
     }
@@ -26,6 +28,6 @@ public class EnemyWorkingState : EnemyBaseState
     }
     public override void Exit()
     {
-
+        _stateMachine.Agent.isStopped = false;
     }
 }

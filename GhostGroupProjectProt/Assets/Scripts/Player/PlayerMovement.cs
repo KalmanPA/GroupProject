@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move(CalculateMovement() * 10, Time.deltaTime);
+        Move(CalculateMovement() * 8, Time.deltaTime);
 
         //FaceMovementDirection(CalculateMovement(), Time.deltaTime);
     }

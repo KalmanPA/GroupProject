@@ -45,6 +45,15 @@ public class EnemyStateMachine : StateMachine
         }
     }
 
+    public void PlayerDetected(GameObject player)
+    {
+        if (CurrentState == EnemyStates.Scared) return;
+        if (CurrentState == EnemyStates.Death) return;
+        if (CurrentState == EnemyStates.Chaseing) return;
+
+        SwitchState(new EnemyChaseingState(this, player));
+    }
+
     public void HearScream(Vector3 screemLocation)
     {
         if (CurrentState == EnemyStates.Scared) return;

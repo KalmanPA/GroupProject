@@ -4,13 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Room : MonoBehaviour, IPointerDownHandler
+public class Room : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private List<EnemyStateMachine> _enemies = new List<EnemyStateMachine>();
 
     [SerializeField] private GameObject _fogVisual;
 
+    [SerializeField] private GameObject _selectVisual;
+
     bool _isFogActive;
+
+    bool _isMouseIn;
 
     float _fogDuration = 2f;
 
@@ -38,6 +42,22 @@ public class Room : MonoBehaviour, IPointerDownHandler
                 _fogVisual.SetActive(false);
             }
         }
+
+        if (_isMouseIn)
+        {
+            if (Vector3.Distance(transform.position, _player.transform.position) < 10)
+            {
+                _selectVisual.SetActive(true);
+            }
+            else
+            {
+                _selectVisual.SetActive(false);
+            }
+        }
+        else
+        {
+            _selectVisual.SetActive(false);
+        }
     }
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -55,6 +75,8 @@ public class Room : MonoBehaviour, IPointerDownHandler
 
     private void SummonFog()
     {
+        _player.GetComponent<PlayerStatus>().IsVulnarable = true;
+
         _isFogActive = true;
 
         _fogVisual.SetActive(true);
@@ -104,5 +126,16 @@ public class Room : MonoBehaviour, IPointerDownHandler
         //{
         //    _isPlayerInRoom = false;
         //}
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _isMouseIn = true;
+        
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _isMouseIn = false;
     }
 }

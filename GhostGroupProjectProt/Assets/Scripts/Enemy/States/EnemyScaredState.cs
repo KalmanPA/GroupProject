@@ -22,7 +22,7 @@ public class EnemyScaredState : EnemyBaseState
         _stateMachine.Agent.isStopped = false;
         _stateMachine.Agent.speed = 6f;
 
-        _stateMachine.Image.sprite = _stateMachine.Textures[1];
+        _stateMachine.Image.sprite = _stateMachine.Textures[2];
 
         Scream();
 

@@ -43,8 +43,6 @@ public class EnemyMovingState : EnemyBaseState
     {
         if (Vector3.Distance(_stateMachine.transform.position, _destination) < 2.5f)
         {
-            _stateMachine.Agent.isStopped = true;
-            
             _stateMachine.SwitchState(new EnemyWorkingState(_stateMachine));
         }
     }

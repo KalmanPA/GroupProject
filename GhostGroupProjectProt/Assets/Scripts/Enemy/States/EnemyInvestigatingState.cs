@@ -16,7 +16,9 @@ public class EnemyInvestigatingState : EnemyBaseState
     {
         _stateMachine.CurrentState = EnemyStates.Investigating;
 
-        _stateMachine.Image.sprite = _stateMachine.Textures[0];
+        _stateMachine.Image.sprite = _stateMachine.Textures[4];
+
+        _stateMachine.Agent.speed = 6f;
     }
     public override void Tick(float deltaTime)
     {
