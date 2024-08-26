@@ -12,6 +12,8 @@ public class EnemyDeathState : EnemyBaseState
 
     public override void Enter()
     {
+        _stateMachine.CurrentState = EnemyStates.Death;
+
         _stateMachine.Agent.isStopped = false;
 
         _stateMachine.Agent.speed = 8f;

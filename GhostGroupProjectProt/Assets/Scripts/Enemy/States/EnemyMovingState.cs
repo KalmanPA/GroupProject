@@ -13,6 +13,8 @@ public class EnemyMovingState : EnemyBaseState
 
     public override void Enter()
     {
+        _stateMachine.CurrentState = EnemyStates.Moving;
+
         _stateMachine.Agent.isStopped = false;
 
         _stateMachine.Agent.speed = 4f;

@@ -12,6 +12,8 @@ public class EnemyWorkingState : EnemyBaseState
     public override void Enter()
     {
         _stateMachine.Image.sprite = _stateMachine.Textures[2];
+
+        _stateMachine.CurrentState = EnemyStates.Working;
     }
     public override void Tick(float deltaTime)
     {

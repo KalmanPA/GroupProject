@@ -12,7 +12,7 @@ public class Room : MonoBehaviour, IPointerDownHandler
 
     bool _isFogActive;
 
-    float _fogDuration = 3f;
+    float _fogDuration = 2f;
 
     //bool _isPlayerInRoom;
 

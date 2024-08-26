@@ -20,6 +20,8 @@ public class EnemyStateMachine : StateMachine
 
     private int _workPosIndex = 0;
 
+    public EnemyStates CurrentState;
+
     private void Start()
     {
         Agent.updateRotation = false;
@@ -41,6 +43,15 @@ public class EnemyStateMachine : StateMachine
 
             return _workPositions[_workPosIndex];
         }
+    }
+
+    public void HearScream(Vector3 screemLocation)
+    {
+        if (CurrentState == EnemyStates.Scared) return;
+        if (CurrentState == EnemyStates.Death) return;
+        if (CurrentState == EnemyStates.Chaseing) return;
+
+        SwitchState(new EnemyInvestigatingState(this, screemLocation));
     }
 
     public void ScareEnemy()

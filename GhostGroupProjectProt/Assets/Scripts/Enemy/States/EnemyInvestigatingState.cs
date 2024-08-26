@@ -2,17 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyInvestigatingState : MonoBehaviour
+public class EnemyInvestigatingState : EnemyBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    Vector3 _investigationPosition;
+
+    float _duration = 6f;
+    public EnemyInvestigatingState(EnemyStateMachine stateMachine, Vector3 investigationPosition) : base(stateMachine)
     {
-        
+        _investigationPosition = investigationPosition;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        _stateMachine.CurrentState = EnemyStates.Investigating;
+
+        _stateMachine.Image.sprite = _stateMachine.Textures[0];
+    }
+    public override void Tick(float deltaTime)
+    {
+        _duration -= deltaTime;
+
+        if (_duration < 0)
+        {
+            _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetNextWorkPosition()));
+        }
+
+        MoveToDestenation(_investigationPosition);
+    }
+
+    public override void Exit()
+    {
+
     }
 }
