@@ -80,6 +80,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""a13b01df-254c-42de-9915-ef5f365df3ed"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -258,6 +267,72 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""UseAbility"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19f3ad71-beef-4b1b-9a3c-6aa105ea0b1d"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""bde9b35e-3d47-4c9f-9d27-334947df5fd0"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""569fe408-5599-41cd-949e-40ed0c68a6e3"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""fa020009-71cb-4ed4-a8a1-f99d04cee8f5"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""efea2f6e-3077-41bf-8c0c-3634862e6143"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2ffaff97-eca0-4eab-b8e6-4e78312cb6fa"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -295,6 +370,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_AbilityFour = m_Player.FindAction("AbilityFour", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_UseAbility = m_Player.FindAction("UseAbility", throwIfNotFound: true);
+        m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -362,6 +438,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_AbilityFour;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_UseAbility;
+    private readonly InputAction m_Player_Aim;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -372,6 +449,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @AbilityFour => m_Wrapper.m_Player_AbilityFour;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @UseAbility => m_Wrapper.m_Player_UseAbility;
+        public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -399,6 +477,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @UseAbility.started += instance.OnUseAbility;
             @UseAbility.performed += instance.OnUseAbility;
             @UseAbility.canceled += instance.OnUseAbility;
+            @Aim.started += instance.OnAim;
+            @Aim.performed += instance.OnAim;
+            @Aim.canceled += instance.OnAim;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -421,6 +502,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @UseAbility.started -= instance.OnUseAbility;
             @UseAbility.performed -= instance.OnUseAbility;
             @UseAbility.canceled -= instance.OnUseAbility;
+            @Aim.started -= instance.OnAim;
+            @Aim.performed -= instance.OnAim;
+            @Aim.canceled -= instance.OnAim;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -464,5 +548,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnAbilityFour(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnUseAbility(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
     }
 }

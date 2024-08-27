@@ -8,9 +8,13 @@ public class Room : MonoBehaviour
 {
     private List<EnemyStateMachine> _enemies = new List<EnemyStateMachine>();
 
+    [SerializeField] private GameObject _motherPrefab;
+
     [SerializeField] private GameObject _fogVisual;
 
     [SerializeField] private GameObject _selectVisual;
+
+    Vector3 _motherDir = Vector3.forward;
 
     bool _isFogActive;
 
@@ -33,14 +37,24 @@ public class Room : MonoBehaviour
     {
         if (!_isPlayerInRoom) return;
 
-        if (AbilitySystem.CurrentAbility != AbilityType.Fog) return;
-     
+        if (AbilitySystem.CurrentAbility == AbilityType.Fog)
+        {
+            SummonFog();
+        }
 
-        SummonFog();
+        if (AbilitySystem.CurrentAbility == AbilityType.Mother)
+        {
+            SummonMother();
+        }
+
     }
+
+    
 
     private void Update()
     {
+        //_motherDir = FindClosestTarget(InputReader.AimValue);
+
         if (_isFogActive)
         {
             _fogDuration -= Time.deltaTime;
@@ -94,8 +108,67 @@ public class Room : MonoBehaviour
     //        SummonFog();
     //    }
 
-        
+
     //}
+
+    private void SummonMother()
+    {
+        _player.GetComponent<PlayerStatus>().IsVulnarable = true;
+
+        //_motherDir = FindClosestTarget(InputReader.AimValue);       
+
+        Mother mom = Instantiate(_motherPrefab, transform.position, Quaternion.identity).GetComponent<Mother>();
+
+        mom.Dir = _motherDir; 
+    }
+
+    public Vector3 FindClosestTarget(Vector2 vector)
+    {
+        // Define the target vectors
+        Vector2[] targets = new Vector2[]
+        {
+            new Vector2(0, 1),   // Target vector (0, 1)
+            new Vector2(0, -1),  // Target vector (0, -1)
+            new Vector2(1, 0),   // Target vector (1, 0)
+            new Vector2(-1, 0)   // Target vector (-1, 0)
+        };
+
+        // Initialize the closest vector and minimum distance
+        Vector2 closestVector = targets[0];
+        float minDistance = Vector2.Distance(vector, closestVector);
+
+        // Loop through all target vectors to find the closest one
+        foreach (Vector2 target in targets)
+        {
+            float distance = Vector2.Distance(vector, target);
+
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestVector = target;
+            }
+        }
+
+        if (closestVector == new Vector2(0, 1))
+        {
+            closestVector = Vector3.forward;
+        }
+        else if(closestVector == new Vector2(0, -1))
+        {
+            closestVector = -Vector3.forward;
+        }
+        else if (closestVector == new Vector2(1, 0))
+        {
+            closestVector = Vector3.right;
+        }
+        else if (closestVector == new Vector2(-1, 0))
+        {
+            closestVector = -Vector3.right;
+        }
+
+
+        return closestVector;
+    }
 
     private void SummonFog()
     {
