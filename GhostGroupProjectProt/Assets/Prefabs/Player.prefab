@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734c34d4c6dbb7141941f8a00c1be6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementSpeed: 10
   _characterController: {fileID: 3275999264826570138}
 --- !u!114 &332883243253823934
 MonoBehaviour:
@@ -386,13 +387,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8455834961393305405}
-  m_LocalRotation: {x: 0.4304593, y: -0.56098557, z: 0.4304593, w: 0.56098557}
+  m_LocalRotation: {x: 0.35092428, y: -0.6138829, z: 0.35092428, w: 0.6138829}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 2.3469324, y: 2.3469324, z: 2.3469324}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3503248635618915414}
-  m_LocalEulerAnglesHint: {x: 75, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 59.509, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.14}
