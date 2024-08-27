@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public static Vector2 MovementValue { get; private set; }
+    public static Vector2 AimValue { get; private set; }
 
     public static event Action AbilityOneEvent;
     public static event Action AbilityTwoEvent;
@@ -68,6 +69,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed) return;
 
         UseAbilityEvent?.Invoke();
+    }
+
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        AimValue = context.ReadValue<Vector2>();
     }
 
     //private Vector3 CalculateMovement(float deltaTime)
