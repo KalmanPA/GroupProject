@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d0c87ee35ea8024e9554a30a4d5443f
+guid: bb367cb5f7d47d945bfe63fdd35b7f2f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,148 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sailor1_0
+      name: ghost_0
       rect:
         serializedVersion: 2
-        x: 761
-        y: 1202
-        width: 285
-        height: 280
+        x: 93
+        y: 395
+        width: 341
+        height: 339
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e4cfb31788765b4fb1a26dad6f5f264
-      internalID: -395839409
+      spriteID: 20ad51711b31924469082a34ca285648
+      internalID: -402584759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sailor1_10
+      name: ghost_1
       rect:
         serializedVersion: 2
-        x: 1083
-        y: 605
-        width: 333
-        height: 303
+        x: 511
+        y: 394
+        width: 351
+        height: 348
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1714afbb6f8f653458b57f1b8fc54d50
-      internalID: 737574714
+      spriteID: b4e1de86cba0e07429e6fa728773005e
+      internalID: -316387719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sailor1_11
+      name: ghost_2
       rect:
         serializedVersion: 2
-        x: 419
-        y: 593
-        width: 282
-        height: 300
+        x: 266
+        y: 56
+        width: 426
+        height: 350
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72196d3e33cdff94c83ae956e622d6d2
-      internalID: -2024878918
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sailor1_12
-      rect:
-        serializedVersion: 2
-        x: 763
-        y: 611
-        width: 281
-        height: 280
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a35577e0b39a58846a9fb351ed3261cb
-      internalID: 1289894825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sailor1_17
-      rect:
-        serializedVersion: 2
-        x: 582
-        y: 288
-        width: 273
-        height: 301
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4befc3e4042463c4b9fc236f2b9135ca
-      internalID: -194546831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sailor1_18
-      rect:
-        serializedVersion: 2
-        x: 935
-        y: 288
-        width: 280
-        height: 303
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a119d4d5f9958be4598d93f8979deb79
-      internalID: 1796367413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sailor1_2
-      rect:
-        serializedVersion: 2
-        x: 741
-        y: 900
-        width: 303
-        height: 285
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abfe453909e7e404cadc66e2cde904aa
-      internalID: -810933502
+      spriteID: 9baf11b5d8278ff4cbc89b40dbda6f02
+      internalID: -1998862119
       vertices: []
       indices: 
       edges: []
@@ -267,34 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sailor1_0: -395839409
-      Sailor1_1: -733744580
-      Sailor1_10: 737574714
-      Sailor1_11: -2024878918
-      Sailor1_12: 1289894825
-      Sailor1_13: -165148658
-      Sailor1_14: 1866112517
-      Sailor1_15: -1387249075
-      Sailor1_16: 1195480106
-      Sailor1_17: -194546831
-      Sailor1_18: 1796367413
-      Sailor1_19: -1111284544
-      Sailor1_2: -810933502
-      Sailor1_20: -895568554
-      Sailor1_21: 1021041329
-      Sailor1_22: 1012805445
-      Sailor1_23: 1638295400
-      Sailor1_24: 1813267583
-      Sailor1_25: -8004057
-      Sailor1_26: -204749555
-      Sailor1_27: 1887528496
-      Sailor1_3: 757364450
-      Sailor1_4: 1111925799
-      Sailor1_5: 1374202901
-      Sailor1_6: 1562017330
-      Sailor1_7: -109673993
-      Sailor1_8: -845863847
-      Sailor1_9: 108445974
+      ghost_0: -402584759
+      ghost_1: -316387719
+      ghost_2: -1998862119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
