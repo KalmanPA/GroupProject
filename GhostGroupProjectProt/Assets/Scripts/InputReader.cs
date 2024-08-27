@@ -16,20 +16,55 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public static event Action UseAbilityEvent;
 
+    public static event Action StartEvent;
+
     private Controls _controls;
 
-    private void Start()
+    private void Awake()
     {
         _controls = new Controls();
         _controls.Player.SetCallbacks(this);
 
-        _controls.Player.Enable();
+        //_controls.Player.Enable();
     }
+    //private void Start()
+    //{
+    //    _controls = new Controls();
+    //    _controls.Player.SetCallbacks(this);
+
+    //    _controls.Player.Enable();
+    //}
 
     private void OnDestroy()
     {
+        if (_controls != null)
+        {
+            _controls.Player.Disable();
+            _controls.Dispose();
+        }
+
+        // Clear all event subscribers to avoid null references and memory leaks
+        AbilityOneEvent = null;
+        AbilityTwoEvent = null;
+        AbilityThreeEvent = null;
+        AbilityFourEvent = null;
+        UseAbilityEvent = null;
+    }
+
+    private void OnEnable()
+    {
+        _controls.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
         _controls.Player.Disable();
     }
+
+    //private void OnDestroy()
+    //{
+    //    _controls.Player.Disable();
+    //}
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -76,15 +111,10 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         AimValue = context.ReadValue<Vector2>();
     }
 
-    //private Vector3 CalculateMovement(float deltaTime)
-    //{
-    //    Vector3 movement = new Vector3();
+    public void OnStart(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
 
-    //    movement += _stateMachine.transform.right * _stateMachine.InputReader.MovementValue.x;
-
-    //    movement += _stateMachine.transform.forward * _stateMachine.InputReader.MovementValue.y;
-
-
-    //    return movement;
-    //}
+        StartEvent?.Invoke();
+    }
 }

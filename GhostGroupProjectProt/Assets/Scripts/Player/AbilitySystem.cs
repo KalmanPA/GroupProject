@@ -17,10 +17,10 @@ public class AbilitySystem : MonoBehaviour
     public static float AbilityThreeDuration = 5f;
     public static float AbilityFourDuration = 5f;
 
-    float _oneDuration;
-    float _twoDuration;
-    float _threeDuration;
-    float _fourDuration;
+    public static float _oneDuration;
+    public static float _twoDuration;
+    public static float _threeDuration;
+    public static float _fourDuration;
 
     static bool _isAbilityOneActive = true;
     static bool _isAbilityTwoActive = true;
@@ -38,6 +38,24 @@ public class AbilitySystem : MonoBehaviour
         _twoDuration = AbilityTwoDuration;
         _threeDuration = AbilityThreeDuration;
         _fourDuration = AbilityFourDuration;
+
+        _isAbilityOneActive = true;
+        _isAbilityTwoActive = true;
+        _isAbilityThreeActive = true;
+        _isAbilityFourActive = true;
+
+        _AbilityOneUsage = 2;
+        _AbilityTwoUsage = 2;
+        _AbilityThreeUsage = 2;
+        _AbilityFourUsage = 2;
+    }
+
+    public static void ResetAbilities()
+    {
+        _AbilityOneUsage = 2;
+        _AbilityTwoUsage = 2;
+        _AbilityThreeUsage = 2;
+        _AbilityFourUsage = 2;
     }
     public static bool IsAbilityOneActive()
     {

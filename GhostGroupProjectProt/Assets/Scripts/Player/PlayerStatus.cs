@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using VHierarchy.Libs;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -9,11 +11,15 @@ public class PlayerStatus : MonoBehaviour
 
     public bool IsVulnarable;
 
+    [SerializeField] private GameObject _deathScreen;
+
     [SerializeField] Image _image;
 
     [SerializeField] Sprite _normal;
 
     [SerializeField] Sprite _volnurable;
+
+    //[SerializeField] private InputAction _inputAction;
 
     private void Start()
     {
@@ -22,7 +28,12 @@ public class PlayerStatus : MonoBehaviour
         //InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
     }
 
-    
+    private void OnEnable()
+    {
+        
+    }
+
+
 
     //private void OnDisable()
     //{
@@ -61,12 +72,20 @@ public class PlayerStatus : MonoBehaviour
             // Check if the collider has the tag "Enemy"
             if (collider.CompareTag("Enemy"))
             {
+
                 // Check if the local boolean is true
-                if (IsVulnarable)
+                if (IsVulnarable && collider.gameObject.GetComponent<EnemyStateMachine>().CurrentState == EnemyStates.Chaseing)
                 {
+                    if (_deathScreen != null)
+                    {
+                        _deathScreen.SetActive(true);
+                    }
+
+
                     // Turn off the GameObject
                     gameObject.SetActive(false);
-                    return; // Exit the method as the GameObject is now off
+                    //gameObject.Destroy();
+                    //return; // Exit the method as the GameObject is now off
                 }
             }
         }
