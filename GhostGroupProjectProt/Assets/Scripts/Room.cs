@@ -25,6 +25,15 @@ public class Room : MonoBehaviour
     private void Start()
     {
         _player = GameObject.FindWithTag("Player");
+
+        InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
+    }
+
+    private void InputReader_UseAbilityEvent()
+    {
+        if (!_isPlayerInRoom) return;
+
+        SummonFog();
     }
 
     private void Update()
@@ -110,6 +119,8 @@ public class Room : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _isPlayerInRoom = true;
+
+            _selectVisual.SetActive(true);
         }
     }
 
@@ -125,13 +136,20 @@ public class Room : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _isPlayerInRoom = false;
+
+            _selectVisual.SetActive(false);
         }
+    }
+
+    private void OnDisable()
+    {
+        InputReader.UseAbilityEvent -= InputReader_UseAbilityEvent;
     }
 
     //public void OnPointerEnter(PointerEventData eventData)
     //{
     //    _isMouseIn = true;
-        
+
     //}
 
     //public void OnPointerExit(PointerEventData eventData)

@@ -31,10 +31,10 @@ public class EnemyMovingState : EnemyBaseState
 
         CheckForReachingDestination();
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-             _stateMachine.ScareEnemy();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //     _stateMachine.ScareEnemy();
+        //}
     }
     public override void Exit()
     {

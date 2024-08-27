@@ -33,7 +33,10 @@ public class PlayerMovement : MonoBehaviour
         forward.Normalize();
         right.Normalize();
 
-        return forward * Input.GetAxis("Vertical") + right * Input.GetAxis("Horizontal");
+        
+        return forward * InputReader.MovementValue.y + right * InputReader.MovementValue.x;
+
+        //return forward * Input.GetAxis("Vertical") + right * Input.GetAxis("Horizontal");
     }
 
     private void FaceMovementDirection(Vector3 movement, float deltaTime)
