@@ -33,6 +33,9 @@ public class Room : MonoBehaviour
     {
         if (!_isPlayerInRoom) return;
 
+        if (AbilitySystem.CurrentAbility != AbilityType.Fog) return;
+     
+
         SummonFog();
     }
 
@@ -49,6 +52,18 @@ public class Room : MonoBehaviour
                 _isFogActive = false;
 
                 _fogVisual.SetActive(false);
+            }
+        }
+
+        if (AbilitySystem.CurrentAbility != AbilityType.Fog)
+        {
+            _selectVisual.SetActive(false);
+        }
+        else
+        {
+            if (_isPlayerInRoom)
+            {
+                _selectVisual.SetActive(true);
             }
         }
 
@@ -120,7 +135,10 @@ public class Room : MonoBehaviour
         {
             _isPlayerInRoom = true;
 
-            _selectVisual.SetActive(true);
+            if (AbilitySystem.CurrentAbility == AbilityType.Fog)
+            {
+                _selectVisual.SetActive(true);
+            }
         }
     }
 
@@ -138,6 +156,7 @@ public class Room : MonoBehaviour
             _isPlayerInRoom = false;
 
             _selectVisual.SetActive(false);
+            
         }
     }
 
