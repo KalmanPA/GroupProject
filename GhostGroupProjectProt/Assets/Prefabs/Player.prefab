@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 332883243253823934}
   - component: {fileID: 3366944551654568495}
   - component: {fileID: 1246086283266129746}
+  - component: {fileID: 2986807554421147114}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -393,6 +394,27 @@ MonoBehaviour:
   _fishPrefab: {fileID: 8325632080752645626, guid: 7780b2abcb672384c851a641d16a8d32,
     type: 3}
   _playerStatus: {fileID: 332883243253823934}
+--- !u!135 &2986807554421147114
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454800472486111492}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!1 &8455834961393305405
 GameObject:
   m_ObjectHideFlags: 0
