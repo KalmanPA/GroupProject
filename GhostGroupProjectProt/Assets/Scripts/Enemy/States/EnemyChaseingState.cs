@@ -15,7 +15,7 @@ public class EnemyChaseingState : EnemyBaseState
 
         _stateMachine.Image.sprite = _stateMachine.Textures[3];
 
-        _stateMachine.Agent.speed = 10f;
+        //_stateMachine.Agent.speed = 10f;
     }
     public override void Tick(float deltaTime)
     {
