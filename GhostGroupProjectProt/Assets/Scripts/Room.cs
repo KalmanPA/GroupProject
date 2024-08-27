@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Room : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class Room : MonoBehaviour
 {
     private List<EnemyStateMachine> _enemies = new List<EnemyStateMachine>();
 
@@ -14,17 +14,26 @@ public class Room : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IP
 
     bool _isFogActive;
 
-    bool _isMouseIn;
+    //bool _isMouseIn;
 
     float _fogDuration = 2f;
 
-    //bool _isPlayerInRoom;
+    bool _isPlayerInRoom;
 
     GameObject _player;
 
     private void Start()
     {
         _player = GameObject.FindWithTag("Player");
+
+        InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
+    }
+
+    private void InputReader_UseAbilityEvent()
+    {
+        if (!_isPlayerInRoom) return;
+
+        SummonFog();
     }
 
     private void Update()
@@ -43,35 +52,35 @@ public class Room : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IP
             }
         }
 
-        if (_isMouseIn)
-        {
-            if (Vector3.Distance(transform.position, _player.transform.position) < 10)
-            {
-                _selectVisual.SetActive(true);
-            }
-            else
-            {
-                _selectVisual.SetActive(false);
-            }
-        }
-        else
-        {
-            _selectVisual.SetActive(false);
-        }
+        //if (_isMouseIn)
+        //{
+        //    if (Vector3.Distance(transform.position, _player.transform.position) < 10)
+        //    {
+        //        _selectVisual.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        _selectVisual.SetActive(false);
+        //    }
+        //}
+        //else
+        //{
+        //    _selectVisual.SetActive(false);
+        //}
     }
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        //Debug.Log("ClickWorks");
+    //public void OnPointerDown(PointerEventData eventData)
+    //{
+    //    //Debug.Log("ClickWorks");
 
-        //if (!_isPlayerInRoom) return;
+    //    //if (!_isPlayerInRoom) return;
 
-        if (Vector3.Distance(transform.position, _player.transform.position) < 15)
-        {
-            SummonFog();
-        }
+    //    if (Vector3.Distance(transform.position, _player.transform.position) < 15)
+    //    {
+    //        SummonFog();
+    //    }
 
         
-    }
+    //}
 
     private void SummonFog()
     {
@@ -107,10 +116,12 @@ public class Room : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IP
             
         }
 
-        //if (other.gameObject.CompareTag("Player"))
-        //{
-        //    _isPlayerInRoom = true;
-        //}
+        if (other.gameObject.CompareTag("Player"))
+        {
+            _isPlayerInRoom = true;
+
+            _selectVisual.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -122,20 +133,27 @@ public class Room : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IP
             _enemies.Remove(other.gameObject.GetComponent<EnemyStateMachine>());
         }
 
-        //if (other.gameObject.CompareTag("Player"))
-        //{
-        //    _isPlayerInRoom = false;
-        //}
+        if (other.gameObject.CompareTag("Player"))
+        {
+            _isPlayerInRoom = false;
+
+            _selectVisual.SetActive(false);
+        }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    private void OnDisable()
     {
-        _isMouseIn = true;
-        
+        InputReader.UseAbilityEvent -= InputReader_UseAbilityEvent;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        _isMouseIn = false;
-    }
+    //public void OnPointerEnter(PointerEventData eventData)
+    //{
+    //    _isMouseIn = true;
+
+    //}
+
+    //public void OnPointerExit(PointerEventData eventData)
+    //{
+    //    _isMouseIn = false;
+    //}
 }

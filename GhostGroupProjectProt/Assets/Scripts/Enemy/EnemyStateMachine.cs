@@ -8,6 +8,12 @@ using UnityEngine.UI;
 
 public class EnemyStateMachine : StateMachine
 {
+    public float MovingSpeed = 4f;
+    public float ScaredSpeed = 6f;
+    public float InvestigatingSpeed = 6f;
+    public float ChaseingSpeed = 10f;
+    public float DeathSpeed = 10f;
+
     public CharacterController CharacterController;
 
     [SerializeField] Transform[] _workPositions;

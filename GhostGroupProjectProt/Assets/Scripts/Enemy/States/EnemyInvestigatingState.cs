@@ -29,7 +29,7 @@ public class EnemyInvestigatingState : EnemyBaseState
             _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetNextWorkPosition()));
         }
 
-        MoveToDestenation(_investigationPosition,6);
+        MoveToDestenation(_investigationPosition, _stateMachine.InvestigatingSpeed);
     }
 
     public override void Exit()

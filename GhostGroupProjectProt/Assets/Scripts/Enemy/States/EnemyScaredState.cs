@@ -7,6 +7,8 @@ public class EnemyScaredState : EnemyBaseState
 {
     //private List<EnemyStateMachine> enemyStateMachines = new List<EnemyStateMachine>();
 
+    
+
     float _duration = 4f;
 
     Vector3 _randomPos;
@@ -38,7 +40,7 @@ public class EnemyScaredState : EnemyBaseState
             _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetNextWorkPosition()));
         }
 
-        MoveToDestenation(_randomPos, 6f);
+        MoveToDestenation(_randomPos, _stateMachine.ScaredSpeed);
 
         //if (_duration > 3f)
         //{

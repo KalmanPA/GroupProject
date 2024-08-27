@@ -6,12 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public float MovementSpeed = 10f;
+
     [SerializeField] CharacterController _characterController;
 
     // Update is called once per frame
     void Update()
     {
-        Move(CalculateMovement() * 8, Time.deltaTime);
+        Move(CalculateMovement() * MovementSpeed, Time.deltaTime);
 
         //FaceMovementDirection(CalculateMovement(), Time.deltaTime);
     }
@@ -31,7 +33,10 @@ public class PlayerMovement : MonoBehaviour
         forward.Normalize();
         right.Normalize();
 
-        return forward * Input.GetAxis("Vertical") + right * Input.GetAxis("Horizontal");
+        
+        return forward * InputReader.MovementValue.y + right * InputReader.MovementValue.x;
+
+        //return forward * Input.GetAxis("Vertical") + right * Input.GetAxis("Horizontal");
     }
 
     private void FaceMovementDirection(Vector3 movement, float deltaTime)
