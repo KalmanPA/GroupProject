@@ -281,6 +281,8 @@ GameObject:
   - component: {fileID: 3275999264826570138}
   - component: {fileID: 2408691101842230257}
   - component: {fileID: 332883243253823934}
+  - component: {fileID: 3366944551654568495}
+  - component: {fileID: 1246086283266129746}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -362,6 +364,35 @@ MonoBehaviour:
   _image: {fileID: 1400974455167558132}
   _normal: {fileID: 21300000, guid: c4ec1cdbe39a570488444ca3fd9ed446, type: 3}
   _volnurable: {fileID: 21300000, guid: f8e166a718386fd4d9bda7223d58b0c6, type: 3}
+--- !u!114 &3366944551654568495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454800472486111492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302ba1ce7f84ed1428cd374189bd11f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerStatus: {fileID: 332883243253823934}
+  _trap: {fileID: 7226092217851183418, guid: 4b4b64f78a56c4c4293bb7b79697787b, type: 3}
+--- !u!114 &1246086283266129746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454800472486111492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee520d5992e7b64d8f20388c2d2ae65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fishPrefab: {fileID: 8325632080752645626, guid: 7780b2abcb672384c851a641d16a8d32,
+    type: 3}
+  _playerStatus: {fileID: 332883243253823934}
 --- !u!1 &8455834961393305405
 GameObject:
   m_ObjectHideFlags: 0

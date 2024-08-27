@@ -529,6 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec91a8b48d9c354598c0f8c2ae03d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _motherPrefab: {fileID: 3755487847113435120, guid: 1067df59e80657448a484ddf68d9862e,
+    type: 3}
   _fogVisual: {fileID: 3324857939751189761}
   _selectVisual: {fileID: 3595705621007516502}
 --- !u!65 &7622306138690484612

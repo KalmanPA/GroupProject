@@ -99,7 +99,7 @@ MonoBehaviour:
   MovingSpeed: 4
   ScaredSpeed: 6
   InvestigatingSpeed: 6
-  ChaseingSpeed: 10
+  ChaseingSpeed: 8
   DeathSpeed: 10
   CharacterController: {fileID: 8304923007270783060}
   _workPositions:
@@ -278,7 +278,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4833016218086324857
 MonoBehaviour:
@@ -504,16 +504,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7341765922165635899}
-  m_LocalRotation: {x: 0.27715117, y: -0.65052843, z: 0.27715117, w: 0.65052843}
+  m_LocalRotation: {x: 0.4304593, y: -0.56098557, z: 0.4304593, w: 0.56098557}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 1.6566439, y: 1.6566439, z: 1.6566439}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7142772571171521948}
-  m_LocalEulerAnglesHint: {x: 46.152, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00000007413052}
+  m_AnchoredPosition: {x: 0, y: -0.00000011920929}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4614403495626753374
