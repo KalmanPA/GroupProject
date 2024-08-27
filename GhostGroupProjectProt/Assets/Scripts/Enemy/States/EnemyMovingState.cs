@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyMovingState : EnemyBaseState
 {
+    
+
     Vector3 _destination;
     public EnemyMovingState(EnemyStateMachine stateMachine, Transform destination) : base(stateMachine)
     {
@@ -25,7 +27,7 @@ public class EnemyMovingState : EnemyBaseState
     {
         //Debug.Log("InMoving");
 
-        MoveToDestenation(_destination, 4f);
+        MoveToDestenation(_destination, _stateMachine.MovingSpeed);
 
         CheckForReachingDestination();
 
