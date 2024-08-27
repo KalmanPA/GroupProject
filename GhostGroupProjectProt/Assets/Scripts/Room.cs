@@ -30,24 +30,47 @@ public class Room : MonoBehaviour
     {
         _player = GameObject.FindWithTag("Player");
 
-        InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
+        //InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
+
+        InputReader.AbilityOneEvent += InputReader_AbilityOneEvent;
+        InputReader.AbilityTwoEvent += InputReader_AbilityTwoEvent; ;
     }
 
-    private void InputReader_UseAbilityEvent()
+    private void InputReader_AbilityTwoEvent()
     {
         if (!_isPlayerInRoom) return;
 
-        if (AbilitySystem.CurrentAbility == AbilityType.Fog)
-        {
-            SummonFog();
-        }
-
-        if (AbilitySystem.CurrentAbility == AbilityType.Mother)
+        if (AbilitySystem.IsAbilityTwoActive())
         {
             SummonMother();
         }
-
     }
+
+    private void InputReader_AbilityOneEvent()
+    {
+        if (!_isPlayerInRoom) return;
+
+        if (AbilitySystem.IsAbilityOneActive())
+        {
+            SummonFog();
+        }
+    }
+
+    //private void InputReader_UseAbilityEvent()
+    //{
+    //    if (!_isPlayerInRoom) return;
+
+    //    if (AbilitySystem.CurrentAbility == AbilityType.Fog)
+    //    {
+    //        SummonFog();
+    //    }
+
+    //    if (AbilitySystem.CurrentAbility == AbilityType.Mother)
+    //    {
+    //        SummonMother();
+    //    }
+
+    //}
 
     
 
@@ -69,17 +92,17 @@ public class Room : MonoBehaviour
             }
         }
 
-        if (AbilitySystem.CurrentAbility != AbilityType.Fog)
-        {
-            _selectVisual.SetActive(false);
-        }
-        else
-        {
-            if (_isPlayerInRoom)
-            {
-                _selectVisual.SetActive(true);
-            }
-        }
+        //if (AbilitySystem.CurrentAbility != AbilityType.Fog)
+        //{
+        //    _selectVisual.SetActive(false);
+        //}
+        //else
+        //{
+        //    if (_isPlayerInRoom)
+        //    {
+        //        _selectVisual.SetActive(true);
+        //    }
+        //}
 
         //if (_isMouseIn)
         //{
@@ -208,10 +231,10 @@ public class Room : MonoBehaviour
         {
             _isPlayerInRoom = true;
 
-            if (AbilitySystem.CurrentAbility == AbilityType.Fog)
-            {
-                _selectVisual.SetActive(true);
-            }
+            //if (AbilitySystem.CurrentAbility == AbilityType.Fog)
+            //{
+            //    _selectVisual.SetActive(true);
+            //}
         }
     }
 
@@ -235,7 +258,8 @@ public class Room : MonoBehaviour
 
     private void OnDisable()
     {
-        InputReader.UseAbilityEvent -= InputReader_UseAbilityEvent;
+        InputReader.AbilityOneEvent -= InputReader_AbilityOneEvent;
+        InputReader.AbilityOneEvent -= InputReader_AbilityTwoEvent;
     }
 
     //public void OnPointerEnter(PointerEventData eventData)

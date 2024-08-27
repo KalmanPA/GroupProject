@@ -18,7 +18,16 @@ public class PlayerStatus : MonoBehaviour
     private void Start()
     {
         _image.sprite = _normal;
+
+        //InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
     }
+
+    
+
+    //private void OnDisable()
+    //{
+    //    InputReader.UseAbilityEvent -= InputReader_UseAbilityEvent;
+    //}
 
     private void Update()
     {
