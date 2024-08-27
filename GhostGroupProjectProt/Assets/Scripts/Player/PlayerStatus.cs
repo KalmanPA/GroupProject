@@ -42,6 +42,8 @@ public class PlayerStatus : MonoBehaviour
 
     private void Update()
     {
+        CheckForEnemiesAndHandleState();
+
         if (IsVulnarable)
         {
             _image.sprite = _volnurable;
@@ -58,13 +60,13 @@ public class PlayerStatus : MonoBehaviour
             }
         }
 
-        CheckForEnemiesAndHandleState();
+        
     }
 
     void CheckForEnemiesAndHandleState()
     {
         // Find all colliders within the specified detection radius
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1.5f);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2f);
 
         // Loop through all the colliders found
         foreach (Collider collider in hitColliders)
