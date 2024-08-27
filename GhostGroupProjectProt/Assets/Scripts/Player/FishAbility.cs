@@ -9,10 +9,10 @@ public class FishAbility : MonoBehaviour
 
     private void Start()
     {
-        InputReader.AbilityThreeEvent += InputReader_AbilityThreeEvent;
+        InputReader.AbilityOneEvent += InputReader_AbilityOneEvent;
     }
 
-    private void InputReader_AbilityThreeEvent()
+    private void InputReader_AbilityOneEvent()
     {
         if (AbilitySystem.IsAbilityThreeActive())
         {
@@ -24,6 +24,6 @@ public class FishAbility : MonoBehaviour
 
     private void OnDisable()
     {
-        InputReader.AbilityThreeEvent -= InputReader_AbilityThreeEvent;
+        InputReader.AbilityOneEvent -= InputReader_AbilityOneEvent;
     }
 }

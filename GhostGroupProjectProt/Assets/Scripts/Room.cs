@@ -32,11 +32,11 @@ public class Room : MonoBehaviour
 
         //InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
 
-        InputReader.AbilityOneEvent += InputReader_AbilityOneEvent;
-        InputReader.AbilityTwoEvent += InputReader_AbilityTwoEvent; ;
+        InputReader.AbilityFourEvent += InputReader_AbilityFourEvent;
+        InputReader.AbilityThreeEvent += InputReader_AbilityThreeEvent; ;
     }
 
-    private void InputReader_AbilityTwoEvent()
+    private void InputReader_AbilityThreeEvent()
     {
         if (!_isPlayerInRoom) return;
 
@@ -46,7 +46,7 @@ public class Room : MonoBehaviour
         }
     }
 
-    private void InputReader_AbilityOneEvent()
+    private void InputReader_AbilityFourEvent()
     {
         if (!_isPlayerInRoom) return;
 
@@ -258,8 +258,8 @@ public class Room : MonoBehaviour
 
     private void OnDisable()
     {
-        InputReader.AbilityOneEvent -= InputReader_AbilityOneEvent;
-        InputReader.AbilityOneEvent -= InputReader_AbilityTwoEvent;
+        InputReader.AbilityFourEvent -= InputReader_AbilityFourEvent;
+        InputReader.AbilityThreeEvent -= InputReader_AbilityThreeEvent;
     }
 
     //public void OnPointerEnter(PointerEventData eventData)

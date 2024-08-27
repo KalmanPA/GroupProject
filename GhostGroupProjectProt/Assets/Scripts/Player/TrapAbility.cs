@@ -9,10 +9,10 @@ public class TrapAbility : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InputReader.AbilityFourEvent += InputReader_AbilityFourEvent;
+        InputReader.AbilityTwoEvent += InputReader_AbilityTwoEvent;
     }
 
-    private void InputReader_AbilityFourEvent()
+    private void InputReader_AbilityTwoEvent()
     {
         if (AbilitySystem.IsAbilityFourActive())
         {
@@ -30,6 +30,6 @@ public class TrapAbility : MonoBehaviour
 
     private void OnDisable()
     {
-        InputReader.UseAbilityEvent -= InputReader_AbilityFourEvent;
+        InputReader.AbilityTwoEvent -= InputReader_AbilityTwoEvent;
     }
 }

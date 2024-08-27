@@ -75,6 +75,9 @@ public class EnemyStateMachine : StateMachine
 
     public void ScareEnemy()
     {
+        if (CurrentState == EnemyStates.Scared) return;
+        if (CurrentState == EnemyStates.Death) return;
+
         _mentalHealth--;
 
         if (_mentalHealth < 0)
