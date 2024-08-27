@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyChaseingState : EnemyBaseState
 {
     GameObject _player;
+
+    
+
     public EnemyChaseingState(EnemyStateMachine stateMachine, GameObject player) : base(stateMachine)
     {
         _player = player;
@@ -19,7 +22,7 @@ public class EnemyChaseingState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
-        MoveToDestenation(_player.transform.position, 10f);
+        MoveToDestenation(_player.transform.position, _stateMachine.ChaseingSpeed);
 
         if (!_player.GetComponent<PlayerStatus>().IsVulnarable)
         {

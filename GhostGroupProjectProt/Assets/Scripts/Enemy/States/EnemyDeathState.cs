@@ -22,7 +22,7 @@ public class EnemyDeathState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
-        MoveToDestenation(_deathPos, 8f);
+        MoveToDestenation(_deathPos, _stateMachine.DeathSpeed);
     }
 
     public override void Exit()
