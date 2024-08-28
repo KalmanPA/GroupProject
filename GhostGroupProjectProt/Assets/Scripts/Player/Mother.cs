@@ -19,6 +19,10 @@ public class Mother : MonoBehaviour
     {
         // Get the Rigidbody component attached to this GameObject
         rb = GetComponent<Rigidbody>();
+        AudioManager.Instance.Play("MotherStart");
+        AudioManager.Instance.Play("MotherLoop");
+
+
     }
 
     void FixedUpdate()
@@ -37,6 +41,7 @@ public class Mother : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        AudioManager.Instance.Stop("MotherLoop");
         gameObject.SetActive(false);
     }
 }

@@ -17,7 +17,6 @@ public class TrapAbility : MonoBehaviour
         if (AbilitySystem.IsAbilityTwoActive())
         {
             Instantiate(_trap, transform.position, Quaternion.identity);
-
             _playerStatus.IsVulnarable = true;
         }
     }

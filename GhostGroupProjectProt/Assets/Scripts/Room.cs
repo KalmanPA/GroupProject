@@ -87,7 +87,7 @@ public class Room : MonoBehaviour
                 _fogDuration = 3f;
 
                 _isFogActive = false;
-
+                AudioManager.Instance.Stop("FogLoop");
                 _fogVisual.SetActive(false);
             }
         }
@@ -196,7 +196,8 @@ public class Room : MonoBehaviour
     private void SummonFog()
     {
         _player.GetComponent<PlayerStatus>().IsVulnarable = true;
-
+        AudioManager.Instance.Play("FogStart");
+        AudioManager.Instance.Play("FogLoop");
         _isFogActive = true;
 
         _fogVisual.SetActive(true);

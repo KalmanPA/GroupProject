@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayBackgroundMusic : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float _timeBeforeStart;
     void Start()
     {
-        AudioManager.Instance.Play("BackgroundMusic") ;
+        // Play the initial music immediately
+        AudioManager.Instance.Play("AwakeMusic");
+
+        // Start the coroutine to play the background ambience after a delay
+        StartCoroutine(PlayBackgroundAmbienceAfterDelay(_timeBeforeStart));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator PlayBackgroundAmbienceAfterDelay(float delay)
     {
-        
+        // Wait for the specified amount of time
+        yield return new WaitForSeconds(delay);
+
+        // Play the background ambience after the delay
+        AudioManager.Instance.Play("BackgroundAmbience");
+        AudioManager.Instance.Play("BackgroundMusic");
     }
 }

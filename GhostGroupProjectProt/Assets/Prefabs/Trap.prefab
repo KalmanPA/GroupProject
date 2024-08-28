@@ -272,3 +272,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd1408e91f788642a5fa61f2d5eec89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundDelay: 0

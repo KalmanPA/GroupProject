@@ -52,6 +52,7 @@ public class PlayerStatus : MonoBehaviour
 
         if (IsVulnarable)
         {
+            AudioManager.Instance.Play("GhostVulnarable");
             _triggeredSkillDuration -= Time.deltaTime;
             _image.sprite = _triggeredSkill;
             _ghostAnimator.SetBool("UsedSkill", true);
@@ -76,7 +77,8 @@ public class PlayerStatus : MonoBehaviour
     {
         _vulnerableDuration = 8f;
         _triggeredSkillDuration = 0.5f;
-        
+        AudioManager.Instance.Stop("GhostVulnarable");
+        AudioManager.Instance.Play("MotherStart");
         IsVulnarable = false;
 
         _image.sprite = _normal;

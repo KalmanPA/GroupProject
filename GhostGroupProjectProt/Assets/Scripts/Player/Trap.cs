@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
+    [Header("Sound settings")]
+    [SerializeField] private float _soundDelay;
     private void Start()
     {
-        
+        StartCoroutine(PlayAfterDelay(_soundDelay));
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,13 @@ public class Trap : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        AudioManager.Instance.Play("LemonStop");
+    }
+
+    private IEnumerator PlayAfterDelay(float delay)
+    {
+        // Wait for the specified amount of time
+        yield return new WaitForSeconds(delay);
+        AudioManager.Instance.Play("LemonStart");
     }
 }

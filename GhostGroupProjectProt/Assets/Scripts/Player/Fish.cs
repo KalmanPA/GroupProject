@@ -13,7 +13,7 @@ public class Fish : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         FindClosestEnemy();  // Find the initial closest enemy
-
+        AudioManager.Instance.Play("FishStart");
         //navMeshAgent.speed = 8f;
     }
 
@@ -73,6 +73,8 @@ public class Fish : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<EnemyStateMachine>().ScareEnemy();
+
+            AudioManager.Instance.Play("FishStop");
 
             gameObject.SetActive(false);
         }
