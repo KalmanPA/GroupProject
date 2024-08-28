@@ -14,7 +14,7 @@ public class TrapAbility : MonoBehaviour
 
     private void InputReader_AbilityTwoEvent()
     {
-        if (AbilitySystem.IsAbilityFourActive())
+        if (AbilitySystem.IsAbilityTwoActive())
         {
             Instantiate(_trap, transform.position, Quaternion.identity);
 

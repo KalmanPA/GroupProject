@@ -14,7 +14,7 @@ public class FishAbility : MonoBehaviour
 
     private void InputReader_AbilityOneEvent()
     {
-        if (AbilitySystem.IsAbilityThreeActive())
+        if (AbilitySystem.IsAbilityOneActive())
         {
             Instantiate(_fishPrefab, transform.position, Quaternion.identity);
 

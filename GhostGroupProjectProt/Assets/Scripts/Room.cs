@@ -40,7 +40,7 @@ public class Room : MonoBehaviour
     {
         if (!_isPlayerInRoom) return;
 
-        if (AbilitySystem.IsAbilityTwoActive())
+        if (AbilitySystem.IsAbilityThreeActive())
         {
             SummonMother();
         }
@@ -50,7 +50,7 @@ public class Room : MonoBehaviour
     {
         if (!_isPlayerInRoom) return;
 
-        if (AbilitySystem.IsAbilityOneActive())
+        if (AbilitySystem.IsAbilityFourActive())
         {
             SummonFog();
         }
