@@ -24,6 +24,9 @@ public class EnemyChasingState : EnemyBaseState
     {
         MoveToDestenation(_player.transform.position, _stateMachine.ChaseingSpeed);
 
+        if (_stateMachine.IsPatrolling) return;
+        
+
         if (!_player.GetComponent<PlayerStatus>().IsVulnarable)
         {
             _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetNextWorkPosition()));

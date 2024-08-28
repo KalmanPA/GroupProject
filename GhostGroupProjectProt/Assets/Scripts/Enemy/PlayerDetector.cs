@@ -9,10 +9,11 @@ public class PlayerDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (other.gameObject.GetComponent<PlayerStatus>().IsVulnarable)
-            {
-                _enemyStateMachine.PlayerDetected(other.gameObject);
-            }
+            _enemyStateMachine.PlayerDetected(other.gameObject);
+            //if (other.gameObject.GetComponent<PlayerStatus>().IsVulnarable)
+            //{
+            //    _enemyStateMachine.PlayerDetected(other.gameObject);
+            //}
         }
     }
 
@@ -20,10 +21,11 @@ public class PlayerDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (other.gameObject.GetComponent<PlayerStatus>().IsVulnarable)
-            {
-                _enemyStateMachine.PlayerDetected(other.gameObject);
-            }
+            _enemyStateMachine.PlayerDetected(other.gameObject);
+            //if (other.gameObject.GetComponent<PlayerStatus>().IsVulnarable)
+            //{
+            //    _enemyStateMachine.PlayerDetected(other.gameObject);
+            //}
         }
     }
 

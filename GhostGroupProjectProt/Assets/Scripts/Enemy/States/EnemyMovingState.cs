@@ -45,7 +45,15 @@ public class EnemyMovingState : EnemyBaseState
     {
         if (Vector3.Distance(_stateMachine.transform.position, _destination) < 3f)
         {
-            _stateMachine.SwitchState(new EnemyWorkingState(_stateMachine));
+            if (!_stateMachine.IsPatrolling)
+            {
+                _stateMachine.SwitchState(new EnemyWorkingState(_stateMachine));
+            }
+            else
+            {
+                _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetNextWorkPosition()));
+            }
+
         }
     }
 }
