@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,22 +9,9 @@ public class LevelManager : MonoBehaviour
     [Tooltip("These variables are in charge of the levels progress knowledge")]
     private static float percentage;
 
-    [Header("Debug")]
+    [Header("UI Elements")]
     [SerializeField] private GameObject debugText;
-
-    // Static property for Percentage
-    public static float Percentage
-    {
-        get { return percentage; }
-        set
-        {
-            percentage = Mathf.Clamp01(value); // Clamping the value between 0 and 1
-            if (Instance != null) // Ensure that the instance exists
-            {
-                Instance.HandleDebugText(); // Call the instance method
-            }
-        }
-    }
+    [SerializeField] private Slider slider;
 
     // Singleton instance
     public static LevelManager Instance { get; private set; }
@@ -38,6 +26,31 @@ public class LevelManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    // Static property for Percentage
+    public static float Percentage
+    {
+        get { return percentage; }
+        set
+        {
+            percentage = Mathf.Clamp01(value); // Clamping the value between 0 and 1
+
+            if (Instance != null) // Ensure that the instance exists
+            {
+                Instance.UpdateSlider(percentage); // Update the slider in the instance
+                Instance.HandleDebugText(); // Call the instance method
+            }
+        }
+    }
+
+    // Method to update the slider
+    private void UpdateSlider(float value)
+    {
+        if (slider != null)
+        {
+            slider.value = value;
         }
     }
 

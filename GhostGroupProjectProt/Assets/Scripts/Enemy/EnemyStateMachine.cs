@@ -13,6 +13,7 @@ public class EnemyStateMachine : StateMachine
     public float InvestigatingSpeed = 6f;
     public float ChaseingSpeed = 10f;
     public float DeathSpeed = 10f;
+    public float WorkProgressAmmount = 2f;
 
     public CharacterController CharacterController;
 

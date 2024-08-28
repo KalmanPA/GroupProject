@@ -101,6 +101,7 @@ MonoBehaviour:
   InvestigatingSpeed: 6
   ChaseingSpeed: 8
   DeathSpeed: 10
+  WorkProgressAmmount: 6
   CharacterController: {fileID: 8304923007270783060}
   _workPositions:
   - {fileID: 0}

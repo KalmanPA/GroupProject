@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyWorkingState : EnemyBaseState
 {
     float _duration = 3f;
+
     public EnemyWorkingState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -20,7 +21,7 @@ public class EnemyWorkingState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         _duration -= deltaTime;
-
+        LevelManager.Percentage += _stateMachine.WorkProgressAmmount * Time.deltaTime * 0.01f;
         if (_duration <= 0)
         {
             _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetNextWorkPosition()));
