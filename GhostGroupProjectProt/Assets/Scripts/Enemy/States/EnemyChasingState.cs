@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyChaseingState : EnemyBaseState
+public class EnemyChasingState : EnemyBaseState
 {
     GameObject _player;
 
     
 
-    public EnemyChaseingState(EnemyStateMachine stateMachine, GameObject player) : base(stateMachine)
+    public EnemyChasingState(EnemyStateMachine stateMachine, GameObject player) : base(stateMachine)
     {
         _player = player;
     }
     public override void Enter()
     {
-        _stateMachine.CurrentState = EnemyStates.Chaseing;
+        _stateMachine.CurrentState = EnemyStates.Chasing;
 
         _stateMachine.Image.sprite = _stateMachine.Textures[3];
 

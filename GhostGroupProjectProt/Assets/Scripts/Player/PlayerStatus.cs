@@ -95,7 +95,7 @@ public class PlayerStatus : MonoBehaviour
             {
 
                 // Check if the local boolean is true
-                if (IsVulnarable && collider.gameObject.GetComponent<EnemyStateMachine>().CurrentState == EnemyStates.Chaseing)
+                if (IsVulnarable && collider.gameObject.GetComponent<EnemyStateMachine>().CurrentState == EnemyStates.Chasing)
                 {
                     Health--;
 

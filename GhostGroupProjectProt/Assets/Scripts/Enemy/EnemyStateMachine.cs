@@ -58,16 +58,16 @@ public class EnemyStateMachine : StateMachine
     {
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
-        if (CurrentState == EnemyStates.Chaseing) return;
+        if (CurrentState == EnemyStates.Chasing) return;
 
-        SwitchState(new EnemyChaseingState(this, player));
+        SwitchState(new EnemyChasingState(this, player));
     }
 
     public void HearScream(Vector3 screemLocation)
     {
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
-        if (CurrentState == EnemyStates.Chaseing) return;
+        if (CurrentState == EnemyStates.Chasing) return;
 
         SwitchState(new EnemyInvestigatingState(this, screemLocation));
     }

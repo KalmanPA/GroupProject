@@ -8,6 +8,7 @@ public enum EnemyStates
     Working,
     Scared,
     Investigating,
-    Chaseing,
-    Death
+    Chasing,
+    Death,
+    Patrolling
 }
