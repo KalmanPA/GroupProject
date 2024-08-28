@@ -7,19 +7,21 @@ using VHierarchy.Libs;
 
 public class PlayerStatus : MonoBehaviour
 {
-    float _duration = 8f;
+    [SerializeField] private float _vulnerableDuration = 8f;
+    [SerializeField] private float _triggeredSkillDuration = 0.5f;
 
     public int Health = 3;
 
     public bool IsVulnarable;
 
     [SerializeField] private GameObject _deathScreen;
+    [SerializeField] private Animator _ghostAnimator;
 
-    [SerializeField] Image _image;
+    [SerializeField] SpriteRenderer _image;
 
     [SerializeField] Sprite _normal;
-
     [SerializeField] Sprite _volnurable;
+    [SerializeField] Sprite _triggeredSkill;
 
     //[SerializeField] private InputAction _inputAction;
 
@@ -50,11 +52,18 @@ public class PlayerStatus : MonoBehaviour
 
         if (IsVulnarable)
         {
-            _image.sprite = _volnurable;
+            _triggeredSkillDuration -= Time.deltaTime;
+            _image.sprite = _triggeredSkill;
+            _ghostAnimator.SetBool("UsedSkill", true);
+            if (_triggeredSkillDuration <= 0 ) 
+            {
+                _ghostAnimator.SetBool("UsedSkill", false);
+                _image.sprite = _volnurable;
+            }
 
-            _duration -= Time.deltaTime;
+            _vulnerableDuration -= Time.deltaTime;
 
-            if (_duration <= 0)
+            if (_vulnerableDuration <= 0)
             {
                 BecomeNormal();
             }
@@ -65,8 +74,9 @@ public class PlayerStatus : MonoBehaviour
 
     private void BecomeNormal()
     {
-        _duration = 8f;
-
+        _vulnerableDuration = 8f;
+        _triggeredSkillDuration = 0.5f;
+        
         IsVulnarable = false;
 
         _image.sprite = _normal;

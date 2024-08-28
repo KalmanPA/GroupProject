@@ -5013,6 +5013,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025677920}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1053020983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1991392564619845286, guid: 4b39e38977f37b646926b66eccd8d545,
+    type: 3}
+  m_PrefabInstance: {fileID: 4118399536832977859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1053020985 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2834897276585496175, guid: 4b39e38977f37b646926b66eccd8d545,
+    type: 3}
+  m_PrefabInstance: {fileID: 4118399536832977859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1053039084
 GameObject:
   m_ObjectHideFlags: 0
@@ -6086,6 +6098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326802773}
   - component: {fileID: 1326802772}
+  - component: {fileID: 1326802774}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -6106,9 +6119,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundCollection:
-  - name: Sounds
-    sounds: []
   - name: Music
+    sounds:
+    - name: BackgroundMusic
+      clip: {fileID: 8300000, guid: aed21ca694ebac44090ab8dcae1bf4d1, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 1
+      playOnAwake: 0
+      randomPitch: 0
+      randomClip: 0
+      canInterrupt: 0
+      minRandomPitch: 0
+      maxRandomPitch: 0
+      randomClips: []
+  - name: Sounds
     sounds: []
   mute: 0
 --- !u!4 &1326802773
@@ -6126,6 +6152,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1132878232}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1326802774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326802771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6811043a93265164f8ded9be7c39b0a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1341194287
 GameObject:
   m_ObjectHideFlags: 0
@@ -7228,8 +7266,7 @@ Transform:
   m_LocalPosition: {x: -15.81615, y: -8.148632, z: 50.38066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1893922462}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571910005
@@ -8384,50 +8421,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892893205}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1893922461
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1893922462}
-  - component: {fileID: 1893922463}
-  m_Layer: 0
-  m_Name: MusicPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1893922462
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893922461}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1553830147}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1893922463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893922461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afce6fc9fc74d984cb78fe57ab114ffb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1898722585
 GameObject:
   m_ObjectHideFlags: 0
@@ -10037,6 +10030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 332883243253823934, guid: 4b39e38977f37b646926b66eccd8d545,
         type: 3}
+      propertyPath: _image
+      value: 
+      objectReference: {fileID: 1053020985}
+    - target: {fileID: 332883243253823934, guid: 4b39e38977f37b646926b66eccd8d545,
+        type: 3}
       propertyPath: _normal
       value: 
       objectReference: {fileID: -316387719, guid: bb367cb5f7d47d945bfe63fdd35b7f2f,
@@ -10056,6 +10054,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _inputAction.m_Name
       value: Input
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991392564619845286, guid: 4b39e38977f37b646926b66eccd8d545,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2909081086588746014, guid: 4b39e38977f37b646926b66eccd8d545,
         type: 3}
@@ -10107,6 +10110,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4547051860579037417, guid: 4b39e38977f37b646926b66eccd8d545,
+        type: 3}
+      propertyPath: _toRotate
+      value: 
+      objectReference: {fileID: 1053020983}
     - target: {fileID: 5973773822672243699, guid: 4b39e38977f37b646926b66eccd8d545,
         type: 3}
       propertyPath: m_Layer
@@ -10401,12 +10409,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5542787254234081042, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5769749698938647369, guid: a60233634a226a44c9a4e8ec86745f60,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7341765922165635899, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601522573144565969, guid: a60233634a226a44c9a4e8ec86745f60,
         type: 3}
       propertyPath: m_IsActive
       value: 1

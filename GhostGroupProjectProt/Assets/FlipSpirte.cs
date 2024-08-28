@@ -51,7 +51,7 @@ public class FlipSpirte : MonoBehaviour
         isFacingRight = true;
 
         // Animate the flip using DOTween
-        _toRotate.transform.DORotate(new Vector3(0, 0, 0), 0.3f).SetEase(Ease.InOutSine);
+        _toRotate.transform.DOLocalRotate(new Vector3(0, 0, 0), 0.3f).SetEase(Ease.InOutSine);
     }
 
     private void FlipCharacterLeft()
@@ -59,6 +59,6 @@ public class FlipSpirte : MonoBehaviour
         isFacingRight = false;
 
         // Animate the flip using DOTween
-        _toRotate.transform.DORotate(new Vector3(0, 180, 0), 0.3f).SetEase(Ease.InOutSine);
+        _toRotate.transform.DOLocalRotate(new Vector3(0, 180, 0), 0.3f).SetEase(Ease.InOutSine);
     }
 }
