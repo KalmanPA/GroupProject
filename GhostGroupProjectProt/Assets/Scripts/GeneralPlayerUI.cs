@@ -46,5 +46,29 @@ public class GeneralPlayerUI : MonoBehaviour
         _toptGray.SetActive(IsAbilityTwoActive);
         _righttGray.SetActive(IsAbilityThreeActive);
         _bottomGray.SetActive(IsAbilityFourActive);
+
+        if (AbilitySystem._AbilityOneUsage <= 0)
+        {
+            _leftGrayText.gameObject.SetActive(false);
+            _leftGray.SetActive(true);
+        }
+
+        if (AbilitySystem._AbilityTwoUsage <= 0)
+        {
+            _topGrayText.gameObject.SetActive(false);
+            _toptGray.SetActive(true);
+        }
+
+        if (AbilitySystem._AbilityThreeUsage <= 0)
+        {
+            _rightGrayText.gameObject.SetActive(false);
+            _righttGray.SetActive(true);
+        }
+
+        if (AbilitySystem._AbilityFourUsage <= 0)
+        {
+            _bottomGrayText.gameObject.SetActive(false);
+            _bottomGray.SetActive(true);
+        }
     }
 }

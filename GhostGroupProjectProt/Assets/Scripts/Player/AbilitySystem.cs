@@ -27,10 +27,10 @@ public class AbilitySystem : MonoBehaviour
     static bool _isAbilityThreeActive = true;
     static bool _isAbilityFourActive = true;
 
-    static int _AbilityOneUsage = 2;
-    static int _AbilityTwoUsage = 2;
-    static int _AbilityThreeUsage = 2;
-    static int _AbilityFourUsage = 2;
+    public static int _AbilityOneUsage = 2;
+    public static int _AbilityTwoUsage = 2;
+    public static int _AbilityThreeUsage = 2;
+    public static int _AbilityFourUsage = 2;
 
     
 
