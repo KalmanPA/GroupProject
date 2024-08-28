@@ -2817,6 +2817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 700276544}
+  - component: {fileID: 700276545}
   m_Layer: 5
   m_Name: HP
   m_TagString: Untagged
@@ -2848,6 +2849,19 @@ RectTransform:
   m_AnchoredPosition: {x: -820, y: 395}
   m_SizeDelta: {x: 144, y: -892.7999}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &700276545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700276543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ae1c3d06549924b8a09417bc4a4f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1898722587}
 --- !u!1 &704559248
 GameObject:
   m_ObjectHideFlags: 0

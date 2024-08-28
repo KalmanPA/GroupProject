@@ -27,6 +27,8 @@ public class PlayerStatus : MonoBehaviour
     {
         _image.sprite = _normal;
 
+        PlayerHealthUI.PlayerHealth = Health;
+
         //InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
     }
 
@@ -86,6 +88,8 @@ public class PlayerStatus : MonoBehaviour
                 if (IsVulnarable && collider.gameObject.GetComponent<EnemyStateMachine>().CurrentState == EnemyStates.Chaseing)
                 {
                     Health--;
+
+                    PlayerHealthUI.PlayerHealth = Health;
 
                     BecomeNormal();
 
