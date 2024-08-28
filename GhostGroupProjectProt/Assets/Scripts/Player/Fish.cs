@@ -31,6 +31,11 @@ public class Fish : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        
+    }
+
     void FindClosestEnemy()
     {
         // Find all colliders within the specified detection radius

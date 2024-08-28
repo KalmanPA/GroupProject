@@ -30,8 +30,6 @@ public class EnemyStateMachine : StateMachine
 
     public EnemyStates CurrentState;
 
-    
-
     private void Start()
     {
         Agent.updateRotation = false;

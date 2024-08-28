@@ -9,6 +9,8 @@ public class PlayerStatus : MonoBehaviour
 {
     float _duration = 8f;
 
+    public int Health = 3;
+
     public bool IsVulnarable;
 
     [SerializeField] private GameObject _deathScreen;

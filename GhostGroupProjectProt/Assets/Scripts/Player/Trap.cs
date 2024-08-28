@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
+    private void Start()
+    {
+        
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -12,5 +16,10 @@ public class Trap : MonoBehaviour
 
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnDisable()
+    {
+        
     }
 }
