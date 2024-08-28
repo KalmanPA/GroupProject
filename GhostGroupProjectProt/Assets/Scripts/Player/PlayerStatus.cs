@@ -27,7 +27,7 @@ public class PlayerStatus : MonoBehaviour
     {
         _image.sprite = _normal;
 
-        PlayerHealthUI.PlayerHealth = Health;
+        GeneralPlayerUI.PlayerHealth = Health;
 
         //InputReader.UseAbilityEvent += InputReader_UseAbilityEvent;
     }
@@ -89,7 +89,7 @@ public class PlayerStatus : MonoBehaviour
                 {
                     Health--;
 
-                    PlayerHealthUI.PlayerHealth = Health;
+                    GeneralPlayerUI.PlayerHealth = Health;
 
                     BecomeNormal();
 
