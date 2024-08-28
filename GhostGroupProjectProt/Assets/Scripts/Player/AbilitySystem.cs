@@ -27,10 +27,12 @@ public class AbilitySystem : MonoBehaviour
     static bool _isAbilityThreeActive = true;
     static bool _isAbilityFourActive = true;
 
-    static int _AbilityOneUsage = 2;
-    static int _AbilityTwoUsage = 2;
-    static int _AbilityThreeUsage = 2;
-    static int _AbilityFourUsage = 2;
+    public static int _AbilityOneUsage = 2;
+    public static int _AbilityTwoUsage = 2;
+    public static int _AbilityThreeUsage = 2;
+    public static int _AbilityFourUsage = 2;
+
+    
 
     private void Start()
     {
@@ -63,6 +65,8 @@ public class AbilitySystem : MonoBehaviour
 
         if (_isAbilityOneActive)
         {
+            GeneralPlayerUI.IsAbilityOneActive = true;
+
             _isAbilityOneActive = false;
 
             _AbilityOneUsage--;
@@ -81,6 +85,7 @@ public class AbilitySystem : MonoBehaviour
 
         if (_isAbilityTwoActive)
         {
+            GeneralPlayerUI.IsAbilityTwoActive = true;
             _isAbilityTwoActive = false;
 
             _AbilityTwoUsage--;
@@ -99,6 +104,7 @@ public class AbilitySystem : MonoBehaviour
 
         if (_isAbilityThreeActive)
         {
+            GeneralPlayerUI.IsAbilityThreeActive = true;
             _isAbilityThreeActive = false;
 
             _AbilityThreeUsage--;
@@ -117,6 +123,7 @@ public class AbilitySystem : MonoBehaviour
 
         if (_isAbilityFourActive)
         {
+            GeneralPlayerUI.IsAbilityFourActive = true;
             _isAbilityFourActive = false;
 
             _AbilityFourUsage--;
@@ -139,6 +146,8 @@ public class AbilitySystem : MonoBehaviour
                 _oneDuration = AbilityOneDuration;
 
                 _isAbilityOneActive = true;
+
+                GeneralPlayerUI.IsAbilityOneActive = false;
             }
         }
 
@@ -151,6 +160,8 @@ public class AbilitySystem : MonoBehaviour
                 _twoDuration = AbilityTwoDuration;
 
                 _isAbilityTwoActive = true;
+
+                GeneralPlayerUI.IsAbilityTwoActive = false;
             }
         }
 
@@ -163,6 +174,8 @@ public class AbilitySystem : MonoBehaviour
                 _threeDuration = AbilityThreeDuration;
 
                 _isAbilityThreeActive = true;
+
+                GeneralPlayerUI.IsAbilityThreeActive = false;
             }
         }
 
@@ -175,6 +188,8 @@ public class AbilitySystem : MonoBehaviour
                 _fourDuration = AbilityFourDuration;
 
                 _isAbilityFourActive = true;
+
+                GeneralPlayerUI.IsAbilityFourActive = false;
             }
         }
     }
