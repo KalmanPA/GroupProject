@@ -54,15 +54,20 @@ public class PlayerStatus : MonoBehaviour
 
             if (_duration <= 0)
             {
-                _duration = 8f;
-
-                IsVulnarable = false;
-
-                _image.sprite = _normal;
+                BecomeNormal();
             }
         }
 
         
+    }
+
+    private void BecomeNormal()
+    {
+        _duration = 8f;
+
+        IsVulnarable = false;
+
+        _image.sprite = _normal;
     }
 
     void CheckForEnemiesAndHandleState()
@@ -80,16 +85,25 @@ public class PlayerStatus : MonoBehaviour
                 // Check if the local boolean is true
                 if (IsVulnarable && collider.gameObject.GetComponent<EnemyStateMachine>().CurrentState == EnemyStates.Chaseing)
                 {
-                    if (_deathScreen != null)
+                    Health--;
+
+                    BecomeNormal();
+
+                    if (Health <= 0)
                     {
-                        _deathScreen.SetActive(true);
+                        if (_deathScreen != null)
+                        {
+                            _deathScreen.SetActive(true);
+                        }
+
+
+                        // Turn off the GameObject
+                        gameObject.SetActive(false);
+                        //gameObject.Destroy();
+                        //return; // Exit the method as the GameObject is now off
                     }
 
 
-                    // Turn off the GameObject
-                    gameObject.SetActive(false);
-                    //gameObject.Destroy();
-                    //return; // Exit the method as the GameObject is now off
                 }
             }
         }
