@@ -32,7 +32,7 @@ public class AbilitySystem : MonoBehaviour
     public static int _AbilityThreeUsage = 2;
     public static int _AbilityFourUsage = 2;
 
-    
+    //[SerializeField] 
 
     private void Start()
     {
