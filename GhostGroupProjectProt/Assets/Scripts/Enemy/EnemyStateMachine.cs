@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class EnemyStateMachine : StateMachine
 {
+    public bool IsPatrolling;
+
     public float MovingSpeed = 4f;
     public float ScaredSpeed = 6f;
     public float InvestigatingSpeed = 6f;
@@ -58,18 +60,23 @@ public class EnemyStateMachine : StateMachine
     {
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
-        if (CurrentState == EnemyStates.Chaseing) return;
+        if (CurrentState == EnemyStates.Chasing) return;
 
-        SwitchState(new EnemyChaseingState(this, player));
+        if (player.GetComponent<PlayerStatus>().IsVulnarable || IsPatrolling)
+        {
+            SwitchState(new EnemyChasingState(this, player));
+        }
+
+        
     }
 
-    public void HearScream(Vector3 screemLocation)
+    public void HearScream(Vector3 screamLocation)
     {
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
-        if (CurrentState == EnemyStates.Chaseing) return;
+        if (CurrentState == EnemyStates.Chasing) return;
 
-        SwitchState(new EnemyInvestigatingState(this, screemLocation));
+        SwitchState(new EnemyInvestigatingState(this, screamLocation));
     }
 
     public void ScareEnemy()
