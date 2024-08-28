@@ -27,10 +27,10 @@ public class AbilitySystem : MonoBehaviour
     static bool _isAbilityThreeActive = true;
     static bool _isAbilityFourActive = true;
 
-    static int _AbilityOneUsage = 3;
-    static int _AbilityTwoUsage = 3;
-    static int _AbilityThreeUsage = 3;
-    static int _AbilityFourUsage = 3;
+    static int _AbilityOneUsage = 2;
+    static int _AbilityTwoUsage = 2;
+    static int _AbilityThreeUsage = 2;
+    static int _AbilityFourUsage = 2;
 
     private void Start()
     {
@@ -44,18 +44,18 @@ public class AbilitySystem : MonoBehaviour
         _isAbilityThreeActive = true;
         _isAbilityFourActive = true;
 
-        _AbilityOneUsage = 3;
-        _AbilityTwoUsage = 3;
-        _AbilityThreeUsage = 3;
-        _AbilityFourUsage = 3;
+        _AbilityOneUsage = 2;
+        _AbilityTwoUsage = 2;
+        _AbilityThreeUsage = 2;
+        _AbilityFourUsage = 2;
     }
 
     public static void ResetAbilities()
     {
-        _AbilityOneUsage = 3;
-        _AbilityTwoUsage = 3;
-        _AbilityThreeUsage = 3;
-        _AbilityFourUsage = 3;
+        _AbilityOneUsage = 2;
+        _AbilityTwoUsage = 2;
+        _AbilityThreeUsage = 2;
+        _AbilityFourUsage = 2;
     }
     public static bool IsAbilityOneActive()
     {
