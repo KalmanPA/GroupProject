@@ -7473,7 +7473,7 @@ MonoBehaviour:
       maxRandomPitch: 1.2
       randomClips: []
     - name: FogStart
-      clip: {fileID: 8300000, guid: 3285ec2cf30a9184ca096fa83efb3060, type: 3}
+      clip: {fileID: 8300000, guid: 0d6e4a7c0cdc70040a2635a828296d53, type: 3}
       volume: 1
       pitch: 1
       source: {fileID: 0}
@@ -7580,6 +7580,19 @@ MonoBehaviour:
       randomClips:
       - {fileID: 8300000, guid: f847d956258c1f842a06b6f5dc3e8e65, type: 3}
       - {fileID: 8300000, guid: e094d66abca919d4eaa66a56c4cf7482, type: 3}
+    - name: Splash
+      clip: {fileID: 8300000, guid: 8e0ada2e537188a4a8ab212b2414f56d, type: 3}
+      volume: 1
+      pitch: 0.8
+      source: {fileID: 0}
+      loop: 0
+      playOnAwake: 0
+      randomPitch: 0
+      randomClip: 0
+      canInterrupt: 0
+      minRandomPitch: 0
+      maxRandomPitch: 0
+      randomClips: []
   mute: 0
 --- !u!4 &1326802773
 Transform:
@@ -12610,6 +12623,11 @@ PrefabInstance:
     - target: {fileID: 1453105663060369618, guid: a60233634a226a44c9a4e8ec86745f60,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: _mentalHealth
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,

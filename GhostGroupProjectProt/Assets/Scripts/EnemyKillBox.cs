@@ -11,7 +11,7 @@ public class EnemyKillBox : MonoBehaviour
         {
             other.gameObject.SetActive(false);
 
-            Instantiate(_splashPrefab, transform.position, Quaternion.identity);
+            Instantiate(_splashPrefab, transform.position, _splashPrefab.transform.rotation);
         }
     }
 }
