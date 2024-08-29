@@ -14,8 +14,10 @@ public class EnemyUnlockingState : EnemyBaseState
 
     public override void Enter()
     {
-        _duration = _door.UnlockTime;
+        _duration = 3f;
         //Debug.Log("UnlockState");
+
+        _stateMachine.Image.sprite = _stateMachine.Textures[1];
 
         _stateMachine.Agent.isStopped = true;
 
@@ -23,10 +25,13 @@ public class EnemyUnlockingState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
+        //Debug.Log("asddasda");
+
         _duration -= deltaTime;
 
         if (_duration <= 0)
         {
+            //_door.IsDoorOpen = true;
             _stateMachine.SwitchState(new EnemyMovingState(_stateMachine, _stateMachine.GetCurrentWorkPosition()));
         }
     }

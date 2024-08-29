@@ -18,4 +18,18 @@ public class DoorDetector : MonoBehaviour
             
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Door"))
+        {
+            Door door = other.gameObject.GetComponent<Door>();
+
+            if (!door.IsDoorOpen)
+            {
+                _stateMachine.BumpedIntoClosedDoor(door);
+            }
+
+        }
+    }
 }

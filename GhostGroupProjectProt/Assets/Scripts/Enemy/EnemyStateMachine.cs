@@ -77,6 +77,7 @@ public class EnemyStateMachine : StateMachine
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
         if (CurrentState == EnemyStates.Chasing) return;
+        if (CurrentState == EnemyStates.Unlocking) return;
 
         if (player.GetComponent<PlayerStatus>().IsVulnarable || IsPatrolling)
         {
@@ -90,7 +91,7 @@ public class EnemyStateMachine : StateMachine
     {
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
-        //if (CurrentState == EnemyStates.Chasing) return;
+        if (CurrentState == EnemyStates.Unlocking) return;
 
         if (!door.IsDoorOpen)
         {
@@ -105,6 +106,7 @@ public class EnemyStateMachine : StateMachine
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
         if (CurrentState == EnemyStates.Chasing) return;
+        if (CurrentState == EnemyStates.Unlocking) return;
 
         SwitchState(new EnemyInvestigatingState(this, screamLocation));
     }
