@@ -27,12 +27,15 @@ public class AbilitySystem : MonoBehaviour
     static bool _isAbilityThreeActive = true;
     static bool _isAbilityFourActive = true;
 
-    public static int _AbilityOneUsage = 2;
-    public static int _AbilityTwoUsage = 2;
-    public static int _AbilityThreeUsage = 2;
-    public static int _AbilityFourUsage = 2;
+    public static int _AbilityOneUsage;
+    public static int _AbilityTwoUsage;
+    public static int _AbilityThreeUsage;
+    public static int _AbilityFourUsage;
 
-    //[SerializeField] 
+    [SerializeField] int _abilityOneNumberOfUses = 2;
+    [SerializeField] int _abilityTwoNumberOfUses = 2;
+    [SerializeField] int _abilityThreeNumberOfUses = 2;
+    [SerializeField] int _abilityFourNumberOfUses = 2;
 
     private void Start()
     {
@@ -46,19 +49,24 @@ public class AbilitySystem : MonoBehaviour
         _isAbilityThreeActive = true;
         _isAbilityFourActive = true;
 
-        _AbilityOneUsage = 2;
-        _AbilityTwoUsage = 2;
-        _AbilityThreeUsage = 2;
-        _AbilityFourUsage = 2;
+        _AbilityOneUsage = _abilityOneNumberOfUses;
+        _AbilityTwoUsage = _abilityTwoNumberOfUses;
+        _AbilityThreeUsage = _abilityThreeNumberOfUses;
+        _AbilityFourUsage = _abilityFourNumberOfUses;
+
+        GeneralPlayerUI.IsAbilityOneActive = false;
+        GeneralPlayerUI.IsAbilityTwoActive = false;
+        GeneralPlayerUI.IsAbilityThreeActive = false;
+        GeneralPlayerUI.IsAbilityFourActive = false;
     }
 
-    public static void ResetAbilities()
-    {
-        _AbilityOneUsage = 2;
-        _AbilityTwoUsage = 2;
-        _AbilityThreeUsage = 2;
-        _AbilityFourUsage = 2;
-    }
+    //public static void ResetAbilities()
+    //{
+    //    _AbilityOneUsage = _abilityOneNumberOfUses;
+    //    _AbilityTwoUsage = _abilityTwoNumberOfUses;
+    //    _AbilityThreeUsage = _abilityThreeNumberOfUses;
+    //    _AbilityFourUsage = _abilityFourNumberOfUses;
+    //}
     public static bool IsAbilityOneActive()
     {
         if (_AbilityOneUsage <= 0) return false;

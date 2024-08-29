@@ -13,7 +13,7 @@ public class DeathScreen : MonoBehaviour
 
     private void InputReader_StartEvent()
     {
-        AbilitySystem.ResetAbilities();
+        //AbilitySystem.ResetAbilities();
         // Get the current active scene's name
         string currentSceneName = SceneManager.GetActiveScene().name;
 
