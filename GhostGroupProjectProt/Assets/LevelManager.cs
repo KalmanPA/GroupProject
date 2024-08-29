@@ -27,6 +27,10 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        slider.value = 0;
+
+        percentage = 0;
     }
 
     // Static property for Percentage
