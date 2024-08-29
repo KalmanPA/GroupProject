@@ -15,7 +15,8 @@ public class EnemyChasingState : EnemyBaseState
     public override void Enter()
     {
         _stateMachine.CurrentState = EnemyStates.Chasing;
-
+        AudioManager.Instance.Play("PirateChaseScreamStart");
+        AudioManager.Instance.Play("PirateChaseStartSword");
         _stateMachine.Image.sprite = _stateMachine.Textures[3];
 
         //_stateMachine.Agent.speed = 10f;
@@ -34,6 +35,6 @@ public class EnemyChasingState : EnemyBaseState
     }
     public override void Exit()
     {
-
+        AudioManager.Instance.Stop("PirateChaseScreamStart");
     }
 }

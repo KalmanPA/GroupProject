@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using VHierarchy.Libs;
 
 public class PlayerStatus : MonoBehaviour
 {

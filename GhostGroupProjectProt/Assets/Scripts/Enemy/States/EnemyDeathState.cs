@@ -13,7 +13,7 @@ public class EnemyDeathState : EnemyBaseState
     public override void Enter()
     {
         _stateMachine.CurrentState = EnemyStates.Death;
-
+        AudioManager.Instance.Play("PirateScared1");
         _stateMachine.Image.sprite = _stateMachine.Textures[2];
 
         _stateMachine.Agent.isStopped = false;

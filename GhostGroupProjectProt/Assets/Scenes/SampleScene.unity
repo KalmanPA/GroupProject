@@ -7528,7 +7528,7 @@ MonoBehaviour:
     sounds:
     - name: PirateWork
       clip: {fileID: 8300000, guid: c80106b9cc6ec6e4183c0219e7cd05cc, type: 3}
-      volume: 1
+      volume: 0.6
       pitch: 1
       source: {fileID: 0}
       loop: 1
@@ -7539,31 +7539,31 @@ MonoBehaviour:
       minRandomPitch: 0
       maxRandomPitch: 0
       randomClips: []
-    - name: PirateAttack
-      clip: {fileID: 8300000, guid: 23938246234ef7047ae0ad5f2c051aff, type: 3}
-      volume: 1
+    - name: PirateChaseScreamStart
+      clip: {fileID: 8300000, guid: 5a8523b76d09ed64da690d42dd3e09ee, type: 3}
+      volume: 0.8
       pitch: 1
       source: {fileID: 0}
       loop: 0
       playOnAwake: 0
       randomPitch: 0
       randomClip: 0
-      canInterrupt: 0
+      canInterrupt: 1
       minRandomPitch: 0
       maxRandomPitch: 0
       randomClips: []
-    - name: PirateAttackSword
-      clip: {fileID: 8300000, guid: 4b9fda9abda3469419407314c03fc8a9, type: 3}
-      volume: 1
+    - name: PirateChaseStartSword
+      clip: {fileID: 8300000, guid: 828010c8730b8e54087b8030012d9a97, type: 3}
+      volume: 0.189
       pitch: 1
       source: {fileID: 0}
       loop: 0
       playOnAwake: 0
-      randomPitch: 0
+      randomPitch: 1
       randomClip: 0
-      canInterrupt: 0
-      minRandomPitch: 0
-      maxRandomPitch: 0
+      canInterrupt: 1
+      minRandomPitch: 0.7
+      maxRandomPitch: 1
       randomClips: []
     - name: PirateScared1
       clip: {fileID: 0}
@@ -7589,7 +7589,7 @@ MonoBehaviour:
       playOnAwake: 0
       randomPitch: 0
       randomClip: 0
-      canInterrupt: 0
+      canInterrupt: 1
       minRandomPitch: 0
       maxRandomPitch: 0
       randomClips: []
