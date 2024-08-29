@@ -4425,6 +4425,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6245836675170128824, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2803135
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245836675170128824, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2803135
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245836675170128824, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2803135
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6709,8 +6724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0.5
-  m_FrequencyGain: 1
+  m_AmplitudeGain: 0.4
+  m_FrequencyGain: 0.3
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1295965732
 GameObject:
@@ -7083,6 +7098,47 @@ MonoBehaviour:
       minRandomPitch: 0
       maxRandomPitch: 0
       randomClips: []
+    - name: PirateAttack
+      clip: {fileID: 8300000, guid: 23938246234ef7047ae0ad5f2c051aff, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
+      playOnAwake: 0
+      randomPitch: 0
+      randomClip: 0
+      canInterrupt: 0
+      minRandomPitch: 0
+      maxRandomPitch: 0
+      randomClips: []
+    - name: PirateAttackSword
+      clip: {fileID: 8300000, guid: 4b9fda9abda3469419407314c03fc8a9, type: 3}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
+      playOnAwake: 0
+      randomPitch: 0
+      randomClip: 0
+      canInterrupt: 0
+      minRandomPitch: 0
+      maxRandomPitch: 0
+      randomClips: []
+    - name: PirateScared1
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 1
+      source: {fileID: 0}
+      loop: 0
+      playOnAwake: 0
+      randomPitch: 1
+      randomClip: 1
+      canInterrupt: 1
+      minRandomPitch: 0.8
+      maxRandomPitch: 1.1
+      randomClips:
+      - {fileID: 8300000, guid: f847d956258c1f842a06b6f5dc3e8e65, type: 3}
+      - {fileID: 8300000, guid: e094d66abca919d4eaa66a56c4cf7482, type: 3}
   mute: 0
 --- !u!4 &1326802773
 Transform:
@@ -11032,6 +11088,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,
         type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: -1475880315, guid: f0e0e840a3ff01346a06eb27c42c604c,
+        type: 3}
+    - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: Textures.Array.data[2]
+      value: 
+      objectReference: {fileID: 1841190000, guid: f0e0e840a3ff01346a06eb27c42c604c,
+        type: 3}
+    - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: Textures.Array.data[3]
+      value: 
+      objectReference: {fileID: -717900246, guid: f0e0e840a3ff01346a06eb27c42c604c,
+        type: 3}
+    - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: Textures.Array.data[4]
+      value: 
+      objectReference: {fileID: -1013946707, guid: f0e0e840a3ff01346a06eb27c42c604c,
+        type: 3}
+    - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
       propertyPath: _workPositions.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -11104,6 +11184,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542787254234081042, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542787254234081042, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1413653601, guid: 3aceb3fe264ef9847b3251ab486f0e12,
+        type: 3}
+    - target: {fileID: 5542787254234081042, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245836675170128824, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.9850917
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245836675170128824, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.3707836
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245836675170128824, guid: a60233634a226a44c9a4e8ec86745f60,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.0880601
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

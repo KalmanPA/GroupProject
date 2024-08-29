@@ -20,7 +20,7 @@ public class EnemyScaredState : EnemyBaseState
     public override void Enter()
     {
         _stateMachine.CurrentState = EnemyStates.Scared;
-
+        AudioManager.Instance.Play("PirateScared1");
         _stateMachine.Agent.isStopped = false;
         _stateMachine.Agent.speed = 6f;
 

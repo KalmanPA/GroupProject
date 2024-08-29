@@ -17,6 +17,8 @@ public class EnemyWorkingState : EnemyBaseState
         _stateMachine.Image.sprite = _stateMachine.Textures[1];
 
         _stateMachine.CurrentState = EnemyStates.Working;
+
+        AudioManager.Instance.Play("PirateWork");
     }
     public override void Tick(float deltaTime)
     {
@@ -29,6 +31,8 @@ public class EnemyWorkingState : EnemyBaseState
     }
     public override void Exit()
     {
+        AudioManager.Instance.Stop("PirateWork");
+        
         _stateMachine.Agent.isStopped = false;
     }
 }
