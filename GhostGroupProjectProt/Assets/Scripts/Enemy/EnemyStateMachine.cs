@@ -56,11 +56,28 @@ public class EnemyStateMachine : StateMachine
         }
     }
 
+    public Transform GetCurrentWorkPosition()
+    {
+        //_workPosIndex++;
+
+        if (_workPosIndex < _workPositions.Length)
+        {
+            return _workPositions[_workPosIndex];
+        }
+        else
+        {
+            _workPosIndex = 0;
+
+            return _workPositions[_workPosIndex];
+        }
+    }
+
     public void PlayerDetected(GameObject player)
     {
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
         if (CurrentState == EnemyStates.Chasing) return;
+        if (CurrentState == EnemyStates.Unlocking) return;
 
         if (player.GetComponent<PlayerStatus>().IsVulnarable || IsPatrolling)
         {
@@ -70,11 +87,26 @@ public class EnemyStateMachine : StateMachine
         
     }
 
+    public void BumpedIntoClosedDoor(Door door)
+    {
+        if (CurrentState == EnemyStates.Scared) return;
+        if (CurrentState == EnemyStates.Death) return;
+        if (CurrentState == EnemyStates.Unlocking) return;
+
+        if (!door.IsDoorOpen)
+        {
+            SwitchState(new EnemyUnlockingState(this, door));
+        }
+
+
+    }
+
     public void HearScream(Vector3 screamLocation)
     {
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
         if (CurrentState == EnemyStates.Chasing) return;
+        if (CurrentState == EnemyStates.Unlocking) return;
 
         SwitchState(new EnemyInvestigatingState(this, screamLocation));
     }
@@ -95,4 +127,14 @@ public class EnemyStateMachine : StateMachine
             SwitchState(new EnemyScaredState(this, SharedPositionsHolder.GetScarePos()));
         }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("Clo detect");
+
+    //    if (collision.gameObject.CompareTag("Door"))
+    //    {
+    //        BumpedIntoClosedDoor(collision.gameObject.GetComponent<Door>());
+    //    }
+    //}
 }

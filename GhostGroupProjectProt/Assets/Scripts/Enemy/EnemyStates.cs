@@ -10,5 +10,5 @@ public enum EnemyStates
     Investigating,
     Chasing,
     Death,
-    Patrolling
+    Unlocking
 }
