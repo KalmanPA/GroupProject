@@ -118,7 +118,7 @@ public class EnemyStateMachine : StateMachine
 
         _mentalHealth--;
 
-        if (_mentalHealth < 0)
+        if (_mentalHealth <= 0)
         {
             SwitchState(new EnemyDeathState(this, SharedPositionsHolder.GetDeathPos()));
         }

@@ -12628,7 +12628,7 @@ PrefabInstance:
     - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,
         type: 3}
       propertyPath: _mentalHealth
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3453319876341601874, guid: a60233634a226a44c9a4e8ec86745f60,
         type: 3}
