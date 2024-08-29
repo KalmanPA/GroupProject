@@ -17,7 +17,7 @@ public class EnemyUnlockingState : EnemyBaseState
         _duration = 3f;
         //Debug.Log("UnlockState");
 
-        _stateMachine.Image.sprite = _stateMachine.Textures[1];
+        //_stateMachine.Image.sprite = _stateMachine.Textures[1];
 
         _stateMachine.Agent.isStopped = true;
 
