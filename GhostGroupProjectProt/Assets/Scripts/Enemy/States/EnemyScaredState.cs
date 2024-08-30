@@ -60,30 +60,5 @@ public class EnemyScaredState : EnemyBaseState
         _stateMachine.Agent.speed = 4f;
     }
 
-    private void Scream()
-    {
-        // Clear the list to ensure no duplicate entries
-        //enemyStateMachines.Clear();
-
-        // Get all colliders within the detection radius
-        Collider[] collidersInRange = Physics.OverlapSphere(_stateMachine.transform.position, 100f);
-
-        // Iterate over all colliders
-        foreach (Collider collider in collidersInRange)
-        {
-            // Check if the collider's GameObject has the enemy tag
-            if (collider.CompareTag("Enemy"))
-            {
-                // Try to get the EnemyStateMachine component on the GameObject
-                EnemyStateMachine enemyStateMachine = collider.GetComponent<EnemyStateMachine>();
-
-                // If the component exists, add it to the list
-                if (enemyStateMachine != null && enemyStateMachine != _stateMachine)
-                {
-                    //enemyStateMachines.Add(enemyStateMachine);
-                    enemyStateMachine.HearScream(_stateMachine.transform.position);
-                }
-            }
-        }
-    }
+    
 }
