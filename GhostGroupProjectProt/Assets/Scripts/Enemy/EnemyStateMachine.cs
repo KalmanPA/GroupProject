@@ -21,7 +21,7 @@ public class EnemyStateMachine : StateMachine
 
     [SerializeField] Transform[] _workPositions;
 
-    [SerializeField] int _mentalHealth = 3;
+    public int MentalHealth = 3;
 
     public Image Image;
 
@@ -116,9 +116,9 @@ public class EnemyStateMachine : StateMachine
         if (CurrentState == EnemyStates.Scared) return;
         if (CurrentState == EnemyStates.Death) return;
 
-        _mentalHealth--;
+        MentalHealth--;
 
-        if (_mentalHealth <= 0)
+        if (MentalHealth <= 0)
         {
             SwitchState(new EnemyDeathState(this, SharedPositionsHolder.GetDeathPos()));
         }
