@@ -98,6 +98,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Info"",
+                    ""type"": ""Button"",
+                    ""id"": ""25964ad4-57d5-4ef1-84c0-c577948d0f09"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -408,6 +417,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Start"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e5a5ed4-d9c6-4c18-aad6-1ab59f699679"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Info"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0658f8e-5fd1-46fd-afe1-451df61f0b2b"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Info"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -447,6 +478,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_UseAbility = m_Player.FindAction("UseAbility", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Start = m_Player.FindAction("Start", throwIfNotFound: true);
+        m_Player_Info = m_Player.FindAction("Info", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -516,6 +548,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_UseAbility;
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_Start;
+    private readonly InputAction m_Player_Info;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -528,6 +561,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @UseAbility => m_Wrapper.m_Player_UseAbility;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @Start => m_Wrapper.m_Player_Start;
+        public InputAction @Info => m_Wrapper.m_Player_Info;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -561,6 +595,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Start.started += instance.OnStart;
             @Start.performed += instance.OnStart;
             @Start.canceled += instance.OnStart;
+            @Info.started += instance.OnInfo;
+            @Info.performed += instance.OnInfo;
+            @Info.canceled += instance.OnInfo;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -589,6 +626,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Start.started -= instance.OnStart;
             @Start.performed -= instance.OnStart;
             @Start.canceled -= instance.OnStart;
+            @Info.started -= instance.OnInfo;
+            @Info.performed -= instance.OnInfo;
+            @Info.canceled -= instance.OnInfo;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -634,5 +674,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnUseAbility(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnStart(InputAction.CallbackContext context);
+        void OnInfo(InputAction.CallbackContext context);
     }
 }

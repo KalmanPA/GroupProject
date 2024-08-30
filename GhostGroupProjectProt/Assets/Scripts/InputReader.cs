@@ -18,6 +18,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public static event Action StartEvent;
 
+    public static event Action InfoEvent;
+
     private Controls _controls;
 
     private void Awake()
@@ -116,5 +118,12 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed) return;
 
         StartEvent?.Invoke();
+    }
+
+    public void OnInfo(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        InfoEvent?.Invoke();
     }
 }
