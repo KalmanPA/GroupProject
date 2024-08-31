@@ -93,10 +93,10 @@ public class EnemyStateMachine : StateMachine
         if (CurrentState == EnemyStates.Death) return;
         if (CurrentState == EnemyStates.Unlocking) return;
 
-        if (!door.IsDoorOpen)
-        {
-            SwitchState(new EnemyUnlockingState(this, door));
-        }
+        //if (!door.IsDoorOpen)
+        //{
+        //    SwitchState(new EnemyUnlockingState(this, door));
+        //}
 
 
     }

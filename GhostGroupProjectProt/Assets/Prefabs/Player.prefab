@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1415516480583569617}
   - component: {fileID: 498576319151101258}
   - component: {fileID: 8654116927931972916}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 7812387202275757537}
   - component: {fileID: 1661031712119461167}
   - component: {fileID: 8435759849031526419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 6127104986899524631}
   - component: {fileID: 5074249654752406368}
   - component: {fileID: 5046939452921451379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6908686090119400590}
   - component: {fileID: 2834897276585496175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GhostVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 4094753941169091425}
   - component: {fileID: 5788152184726658004}
   - component: {fileID: 2274548860538839563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 9023666929391721567}
   - component: {fileID: 3014651856389472207}
   - component: {fileID: 4008656927144241125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ObjectDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5.17
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6454800472486111492
 GameObject:
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 3366944551654568495}
   - component: {fileID: 1246086283266129746}
   - component: {fileID: 2986807554421147114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 4930115187591829578}
   - component: {fileID: 6234862040797220028}
   - component: {fileID: 1400974455167558132}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 2085373655835243456}
   - component: {fileID: 2637365646629409042}
   - component: {fileID: 1666875509290829094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

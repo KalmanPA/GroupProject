@@ -19,6 +19,8 @@ public class EnemyDeathState : EnemyBaseState
         _stateMachine.Agent.isStopped = false;
 
         _stateMachine.Agent.speed = 8f;
+
+        Scream();
     }
     public override void Tick(float deltaTime)
     {
