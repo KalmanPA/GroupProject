@@ -16,7 +16,6 @@ public abstract class EnemyBaseState : State
         //_stateMachine.Agent.SetDestination(pos);
         _stateMachine.Agent.destination = pos;
 
-
         Move(_stateMachine.Agent.desiredVelocity.normalized * speed, Time.deltaTime);
     }
 
@@ -30,6 +29,33 @@ public abstract class EnemyBaseState : State
         if (!_stateMachine.CharacterController.enabled) return;
 
         _stateMachine.CharacterController.Move((motion) * deltaTime);
+    }
+
+    protected void Scream()
+    {
+        // Clear the list to ensure no duplicate entries
+        //enemyStateMachines.Clear();
+
+        // Get all colliders within the detection radius
+        Collider[] collidersInRange = Physics.OverlapSphere(_stateMachine.transform.position, 100f);
+
+        // Iterate over all colliders
+        foreach (Collider collider in collidersInRange)
+        {
+            // Check if the collider's GameObject has the enemy tag
+            if (collider.CompareTag("Enemy"))
+            {
+                // Try to get the EnemyStateMachine component on the GameObject
+                EnemyStateMachine enemyStateMachine = collider.GetComponent<EnemyStateMachine>();
+
+                // If the component exists, add it to the list
+                if (enemyStateMachine != null && enemyStateMachine != _stateMachine)
+                {
+                    //enemyStateMachines.Add(enemyStateMachine);
+                    enemyStateMachine.HearScream(_stateMachine.transform.position);
+                }
+            }
+        }
     }
 
     //private void MoveToPlayer(float deltaTime)

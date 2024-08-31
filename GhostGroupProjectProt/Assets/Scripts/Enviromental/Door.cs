@@ -17,6 +17,8 @@ public class Door : MonoBehaviour,IInteractable
         }
     }
 
+    [SerializeField] bool _isClosedOnStart;
+
     public float UnlockTime = 3f;
 
     private bool _isDoorOpen = true;
@@ -32,6 +34,8 @@ public class Door : MonoBehaviour,IInteractable
     private void Start()
     {
         _collider = GetComponent<Collider>();
+
+        IsDoorOpen = !_isClosedOnStart;
     }
     private void ToggleDoor(bool isOpen)
     {
